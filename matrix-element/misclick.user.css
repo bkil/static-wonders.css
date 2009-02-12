@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misclick
 @namespace      bkil.hu
-@version        2023.02.02
+@version        2023.02.03
 @description    Disable rarely needed buttons
 @author         bkil
 ==/UserStyle== */
@@ -62,12 +62,12 @@ url-prefix("https://element.") {
     }
 
     a.linkified:not([href^="https://matrix.to/"]):not([href^="https://github.com/"]):not([href^="https://www.openstreetmap.org/"]):not([href^="https://openwrt.org/"]),
-    a:not(.linkified):not([href^="https://matrix.to/"]):not([href^="https://github.com/"]):not([href^="https://www.openstreetmap.org/"]):not([href^="https://openwrt.org/"]) {
+    a:not(.linkified):not([href^="#"]):not([href^="https://matrix.to/"]):not([href^="https://github.com/"]):not([href^="https://www.openstreetmap.org/"]):not([href^="https://openwrt.org/"]) {
       cursor: default;
       text-decoration: line-through;
     }
 
-    a:not(.linkified):not([href^="https://matrix.to/"]):not([href^="https://github.com/"]):not([href^="https://www.openstreetmap.org/"]):not([href^="https://openwrt.org/"])::after {
+    a:not(.linkified):not([href^="#"]):not([href^="https://matrix.to/"]):not([href^="https://github.com/"]):not([href^="https://www.openstreetmap.org/"]):not([href^="https://openwrt.org/"])::after {
       margin-left: 1em;
       font-style: italic;
       content: attr(href);
