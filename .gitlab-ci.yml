@@ -6,8 +6,9 @@ pages:
   script:
   - gzip -9 -f -k */*.html
   - brotli -f -k */*.html
-  - mkdir public
-  - mv -t public *
+  - mkdir .public
+  - mv -t .public *
+  - mv .public public
   artifacts:
     paths:
     - public
