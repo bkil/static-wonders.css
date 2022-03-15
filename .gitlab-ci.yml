@@ -1,0 +1,16 @@
+image: alpine:latest
+pages:
+  stage: deploy
+  before_script:
+  - apk update && apk add brotli
+  script:
+  - gzip -9 -f -k */*.html
+  - brotli -f -k */*.html
+  - mkdir public
+  - mv -t public *
+  artifacts:
+    paths:
+    - public
+    expire_in: 1 day
+  only:
+  - master
