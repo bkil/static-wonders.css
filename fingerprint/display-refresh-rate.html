@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <meta http-equiv=content-type content='text/html; charset=UTF-8'>
+  <title>Display refresh rate CAPTCHA</title>
+  <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
+  <meta name=viewport content='width=device-width, initial-scale=1.0'>
+<style>
+
+/* propagate defaults and selection variables to other nodes */
+
+#a:checked ~ *, [data-hz="30"] { --hz: 30 }
+#b:checked ~ *, [data-hz="40"] { --hz: 40 }
+#c:checked ~ *, [data-hz="56"] { --hz: 56 }
+#d:checked ~ *, [data-hz="60"] { --hz: 60 }
+#e:checked ~ *, [data-hz="70"] { --hz: 70 }
+#f:checked ~ *, [data-hz="72"] { --hz: 72 }
+#g:checked ~ *, [data-hz="75"] { --hz: 75 }
+#h:checked ~ *, [data-hz="90"] { --hz: 90 }
+#i:checked ~ *, [data-hz="120"] { --hz: 120 }
+#j:checked ~ *, [data-hz="144"] { --hz: 144 }
+#k:checked ~ *, [data-hz="180"] { --hz: 180 }
+#l:checked ~ *, [data-hz="240"] { --hz: 240 }
+
+#A:checked ~ *, [data-q="1"]  { --q:  980 }
+#B:checked ~ *, [data-q="2"]  { --q:  985 }
+#C:checked ~ *, [data-q="3"]  { --q:  990 }
+#D:checked ~ *, [data-q="4"]  { --q:  995 }
+#E:checked ~ *, [data-q="5"]  { --q:  998 }
+#F:checked ~ *, [data-q="6"]  { --q: 1000 }
+#G:checked ~ *, [data-q="7"]  { --q: 1002 }
+#H:checked ~ *, [data-q="8"]  { --q: 1005 }
+#I:checked ~ *, [data-q="9"]  { --q: 1010 }
+#J:checked ~ *, [data-q="10"] { --q: 1015 }
+#K:checked ~ *, [data-q="11"] { --q: 1020 }
+#L:checked ~ *, [data-q="12"] { --q: 1025 }
+
+/* leak back user data to server */
+
+#a:checked ~ h1 { background-image: url("a.jpeg") }
+#b:checked ~ h1 { background-image: url("b.jpeg") }
+#c:checked ~ h1 { background-image: url("c.jpeg") }
+#d:checked ~ h1 { background-image: url("d.jpeg") }
+#e:checked ~ h1 { background-image: url("e.jpeg") }
+#f:checked ~ h1 { background-image: url("f.jpeg") }
+#g:checked ~ h1 { background-image: url("g.jpeg") }
+#h:checked ~ h1 { background-image: url("h.jpeg") }
+#i:checked ~ h1 { background-image: url("i.jpeg") }
+#j:checked ~ h1 { background-image: url("j.jpeg") }
+#k:checked ~ h1 { background-image: url("k.jpeg") }
+#l:checked ~ h1 { background-image: url("l.jpeg") }
+
+#A:checked ~ .result { background-image: url("A.jpeg") }
+#B:checked ~ .result { background-image: url("B.jpeg") }
+#C:checked ~ .result { background-image: url("C.jpeg") }
+#D:checked ~ .result { background-image: url("D.jpeg") }
+#E:checked ~ .result { background-image: url("E.jpeg") }
+#F:checked ~ .result { background-image: url("F.jpeg") }
+#G:checked ~ .result { background-image: url("G.jpeg") }
+#H:checked ~ .result { background-image: url("H.jpeg") }
+#I:checked ~ .result { background-image: url("I.jpeg") }
+#J:checked ~ .result { background-image: url("J.jpeg") }
+#K:checked ~ .result { background-image: url("K.jpeg") }
+#L:checked ~ .result { background-image: url("L.jpeg") }
+
+/* expand table */
+
+table {
+  margin: 2em;
+  border-collapse: collapse;
+}
+
+tr {
+  height: 6em;
+}
+
+td {
+  min-width: 5em;
+  position: relative;
+  border: 1px solid;
+  padding: 0;
+}
+
+/* animation */
+
+td > label:before,
+td > label:after
+{
+  position: absolute;
+  top: 0;
+  min-width: 4em;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  animation-duration: calc(1000ms * 1000 / var(--hz) / var(--q, 1010));
+}
+
+/* overlay two labels with offset, visible in alternating phase */
+
+td > label:before {
+  left: 0;
+  margin-left: 0.2em;
+  padding-right: 0.2em;
+  animation-timing-function: step-start;
+}
+
+td > label:after {
+  left: 0.2em;
+  padding-left: 0.2em;
+  animation-timing-function: step-end;
+}
+
+[data-hz]:before,
+[data-hz]:after
+{
+  content: 'first';
+}
+
+[data-q]:before,
+[data-q]:after
+{
+  content: 'second';
+}
+
+@keyframes blink {
+  50% { visibility: hidden }
+}
+
+/* option to stop animation */
+
+#z:checked ~ table label:after {
+  visibility: hidden;
+}
+
+#z:not(:checked) ~ table label:before,
+#z:not(:checked) ~ table label:after
+{
+  animation-name: blink;
+  animation-iteration-count: infinite;
+}
+
+/* table modality: crude Hz, fine Hz, result */
+
+[name="r"]:checked ~ table [data-hz],
+[data-q],
+.result,
+input[name],
+[name="R"]:checked ~ .run
+{
+  display: none;
+}
+
+[name="r"]:checked ~ table [data-q],
+[name="R"]:checked ~ .result
+{
+  display: initial;
+}
+
+.rate:after {
+  counter-reset: hz var(--hz) q var(--q);
+  content: counter(q) " / 1000 * " counter(hz);
+}
+
+</style>
+</head>
+<body>
+  <input id=a name=r type=radio>
+  <input id=b name=r type=radio>
+  <input id=c name=r type=radio>
+  <input id=d name=r type=radio>
+  <input id=e name=r type=radio>
+  <input id=f name=r type=radio>
+  <input id=g name=r type=radio>
+  <input id=h name=r type=radio>
+  <input id=i name=r type=radio>
+  <input id=j name=r type=radio>
+  <input id=k name=r type=radio>
+  <input id=l name=r type=radio>
+
+  <input id=A name=R type=radio>
+  <input id=B name=R type=radio>
+  <input id=C name=R type=radio>
+  <input id=D name=R type=radio>
+  <input id=E name=R type=radio>
+  <input id=F name=R type=radio>
+  <input id=G name=R type=radio>
+  <input id=H name=R type=radio>
+  <input id=I name=R type=radio>
+  <input id=J name=R type=radio>
+  <input id=K name=R type=radio>
+  <input id=L name=R type=radio>
+
+  <h1 class=run>Please click on the square that is the steadiest</h1>
+  <br class=run>
+  <label for=z class=run>I am a robot, stop test</label>&nbsp;<input id=z type=checkbox autofocus class=run>
+
+  <table class=run>
+    <tr>
+      <td><label for=a data-hz=30></label><label for=A data-q=1></label>
+      <td><label for=b data-hz=40></label><label for=B data-q=2></label>
+      <td><label for=c data-hz=56></label><label for=C data-q=3></label>
+      <td><label for=d data-hz=60></label><label for=D data-q=4></label>
+    <tr>
+      <td><label for=e data-hz=70></label><label for=E data-q=5></label>
+      <td><label for=f data-hz=72></label><label for=F data-q=6></label>
+      <td><label for=g data-hz=75></label><label for=G data-q=7></label>
+      <td><label for=h data-hz=90></label><label for=H data-q=8></label>
+    <tr>
+      <td><label for=i data-hz=120></label><label for=I data-q=9></label>
+      <td><label for=j data-hz=144></label><label for=J data-q=10></label>
+      <td><label for=k data-hz=180></label><label for=K data-q=11></label>
+      <td><label for=l data-hz=240></label><label for=L data-q=12></label>
+  </table>
+
+  <div class=result>
+    <p>
+      Thank you for submitting your display refresh rate of <span class=rate></span> Hz to our fingerprinting database.
+    </p>
+    <p>
+      <a href="https://gitlab.com/bkil/static-wonders.css">https://gitlab.com/bkil/static-wonders.css</a>
+    </p>
+</body>
+</html>
