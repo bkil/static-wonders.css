@@ -44,37 +44,41 @@
 
 /* leak back user data to server */
 
-#h30:checked ~ h1 { background-image: url("h30.jpeg") }
-#h40:checked ~ h1 { background-image: url("h40.jpeg") }
-#h50:checked ~ h1 { background-image: url("h50.jpeg") }
-#h56:checked ~ h1 { background-image: url("h56.jpeg") }
-#h60:checked ~ h1 { background-image: url("h60.jpeg") }
-#h67:checked ~ h1 { background-image: url("h67.jpeg") }
-#h70:checked ~ h1 { background-image: url("h70.jpeg") }
-#h72:checked ~ h1 { background-image: url("h72.jpeg") }
-#h75:checked ~ h1 { background-image: url("h75.jpeg") }
-#h90:checked ~ h1 { background-image: url("h90.jpeg") }
-#h100:checked ~ h1 { background-image: url("h100.jpeg") }
-#h120:checked ~ h1 { background-image: url("h120.jpeg") }
-#h144:checked ~ h1 { background-image: url("h144.jpeg") }
-#h180:checked ~ h1 { background-image: url("h180.jpeg") }
-#h240:checked ~ h1 { background-image: url("h240.jpeg") }
+#leak {
+  visibility: hidden;
+}
 
-#A:checked ~ .result { background-image: url("A.jpeg") }
-#B:checked ~ .result { background-image: url("B.jpeg") }
-#C:checked ~ .result { background-image: url("C.jpeg") }
-#D:checked ~ .result { background-image: url("D.jpeg") }
-#E:checked ~ .result { background-image: url("E.jpeg") }
-#F:checked ~ .result { background-image: url("F.jpeg") }
-#G:checked ~ .result { background-image: url("G.jpeg") }
-#H:checked ~ .result { background-image: url("H.jpeg") }
-#I:checked ~ .result { background-image: url("I.jpeg") }
-#J:checked ~ .result { background-image: url("J.jpeg") }
-#K:checked ~ .result { background-image: url("K.jpeg") }
-#L:checked ~ .result { background-image: url("L.jpeg") }
-#M:checked ~ .result { background-image: url("M.jpeg") }
-#N:checked ~ .result { background-image: url("N.jpeg") }
-#O:checked ~ .result { background-image: url("O.jpeg") }
+#h30:checked ~ #leak { background-image: url("h30.jpeg") }
+#h40:checked ~ #leak { background-image: url("h40.jpeg") }
+#h50:checked ~ #leak { background-image: url("h50.jpeg") }
+#h56:checked ~ #leak { background-image: url("h56.jpeg") }
+#h60:checked ~ #leak { background-image: url("h60.jpeg") }
+#h67:checked ~ #leak { background-image: url("h67.jpeg") }
+#h70:checked ~ #leak { background-image: url("h70.jpeg") }
+#h72:checked ~ #leak { background-image: url("h72.jpeg") }
+#h75:checked ~ #leak { background-image: url("h75.jpeg") }
+#h90:checked ~ #leak { background-image: url("h90.jpeg") }
+#h100:checked ~ #leak { background-image: url("h100.jpeg") }
+#h120:checked ~ #leak { background-image: url("h120.jpeg") }
+#h144:checked ~ #leak { background-image: url("h144.jpeg") }
+#h180:checked ~ #leak { background-image: url("h180.jpeg") }
+#h240:checked ~ #leak { background-image: url("h240.jpeg") }
+
+#A:checked ~ #leak { background-image: url("A.jpeg") }
+#B:checked ~ #leak { background-image: url("B.jpeg") }
+#C:checked ~ #leak { background-image: url("C.jpeg") }
+#D:checked ~ #leak { background-image: url("D.jpeg") }
+#E:checked ~ #leak { background-image: url("E.jpeg") }
+#F:checked ~ #leak { background-image: url("F.jpeg") }
+#G:checked ~ #leak { background-image: url("G.jpeg") }
+#H:checked ~ #leak { background-image: url("H.jpeg") }
+#I:checked ~ #leak { background-image: url("I.jpeg") }
+#J:checked ~ #leak { background-image: url("J.jpeg") }
+#K:checked ~ #leak { background-image: url("K.jpeg") }
+#L:checked ~ #leak { background-image: url("L.jpeg") }
+#M:checked ~ #leak { background-image: url("M.jpeg") }
+#N:checked ~ #leak { background-image: url("N.jpeg") }
+#O:checked ~ #leak { background-image: url("O.jpeg") }
 
 /* expand table */
 
@@ -241,5 +245,7 @@ input[name],
     <p>
       <a href="https://gitlab.com/bkil/static-wonders.css">https://gitlab.com/bkil/static-wonders.css</a>
     </p>
+  </div>
+  <span id=leak></span>
 </body>
 </html>
