@@ -26,21 +26,21 @@
 #h180:checked ~ *, [data-hz="180"] { --hz: 180 }
 #h240:checked ~ *, [data-hz="240"] { --hz: 240 }
 
-#A:checked ~ *, [data-q="A"] { --q:  980 }
-#B:checked ~ *, [data-q="B"] { --q:  985 }
-#C:checked ~ *, [data-q="C"] { --q:  990 }
-#D:checked ~ *, [data-q="D"] { --q:  995 }
-#E:checked ~ *, [data-q="E"] { --q:  997 }
-#F:checked ~ *, [data-q="F"] { --q:  998 }
-#G:checked ~ *, [data-q="G"] { --q:  999 }
-#H:checked ~ *, [data-q="H"] { --q: 1000 }
-#I:checked ~ *, [data-q="I"] { --q: 1001 }
-#J:checked ~ *, [data-q="J"] { --q: 1002 }
-#K:checked ~ *, [data-q="K"] { --q: 1005 }
-#L:checked ~ *, [data-q="L"] { --q: 1010 }
-#M:checked ~ *, [data-q="M"] { --q: 1015 }
-#N:checked ~ *, [data-q="N"] { --q: 1020 }
-#O:checked ~ *, [data-q="O"] { --q: 1025 }
+#A:checked ~ *, [data-q="A"] { --t: -5 }
+#B:checked ~ *, [data-q="B"] { --t: -4 }
+#C:checked ~ *, [data-q="C"] { --t: -3 }
+#D:checked ~ *, [data-q="D"] { --t: -2 }
+#E:checked ~ *, [data-q="E"] { --t: -1 }
+#F:checked ~ *, [data-q="F"] { --t: 0; --h: -5 }
+#G:checked ~ *, [data-q="G"] { --t: 0; --h: -2 }
+#H:checked ~ *, [data-q="H"] { --t: 0; --h: 0 }
+#I:checked ~ *, [data-q="I"] { --t: 0; --h: 2 }
+#J:checked ~ *, [data-q="J"] { --t: 0; --h: 5 }
+#K:checked ~ *, [data-q="K"] { --t: 1 }
+#L:checked ~ *, [data-q="L"] { --t: 2 }
+#M:checked ~ *, [data-q="M"] { --t: 3 }
+#N:checked ~ *, [data-q="N"] { --t: 4 }
+#O:checked ~ *, [data-q="O"] { --t: 5 }
 
 /* leak back user data to server */
 
@@ -109,7 +109,6 @@ td > label:after
   text-align: center;
   padding-top: 2em;
   padding-bottom: 2em;
-  animation-duration: calc(1000ms * 1000 / var(--hz) / var(--q, 1005));
 }
 
 /* overlay two labels with offset, visible in alternating phase */
@@ -131,12 +130,14 @@ td > label:after {
 [data-hz]:after
 {
   content: 'first';
+  animation-duration: calc(1s / 1.005 / var(--hz));
 }
 
 [data-q]:before,
 [data-q]:after
 {
   content: 'second';
+  animation-duration: calc(1000s / (var(--hz) * 1000 + var(--t, 0) * 100 + var(--h, 0) * 10));
 }
 
 @keyframes blink {
@@ -181,8 +182,8 @@ input[name],
 }
 
 .rate:after {
-  counter-reset: hz var(--hz) q var(--q);
-  content: counter(q) " / 1000 * " counter(hz);
+  counter-reset: mhz calc(var(--hz) * 1000 + var(--t, 0) * 100 + var(--h, 0) * 10);
+  content: counter(mhz) " mHz";
 }
 
 </style>
@@ -250,7 +251,7 @@ input[name],
 
   <div class=result>
     <p>
-      Thank you for submitting your display refresh rate of <span class=rate></span> Hz to our fingerprinting database.
+      Thank you for submitting your display refresh rate of <span class=rate></span> to our fingerprinting database.
     </p>
     <p>
       <a href="https://gitlab.com/bkil/static-wonders.css">https://gitlab.com/bkil/static-wonders.css</a>
