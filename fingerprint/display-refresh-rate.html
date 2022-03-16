@@ -10,46 +10,55 @@
 
 /* propagate defaults and selection variables to other nodes */
 
-#a:checked ~ *, [data-hz="30"] { --hz: 30 }
-#b:checked ~ *, [data-hz="40"] { --hz: 40 }
-#c:checked ~ *, [data-hz="56"] { --hz: 56 }
-#d:checked ~ *, [data-hz="60"] { --hz: 60 }
-#e:checked ~ *, [data-hz="70"] { --hz: 70 }
-#f:checked ~ *, [data-hz="72"] { --hz: 72 }
-#g:checked ~ *, [data-hz="75"] { --hz: 75 }
-#h:checked ~ *, [data-hz="90"] { --hz: 90 }
-#i:checked ~ *, [data-hz="120"] { --hz: 120 }
-#j:checked ~ *, [data-hz="144"] { --hz: 144 }
-#k:checked ~ *, [data-hz="180"] { --hz: 180 }
-#l:checked ~ *, [data-hz="240"] { --hz: 240 }
+#h30:checked ~ *, [data-hz="30"] { --hz: 30 }
+#h40:checked ~ *, [data-hz="40"] { --hz: 40 }
+#h50:checked ~ *, [data-hz="50"] { --hz: 50 }
+#h56:checked ~ *, [data-hz="56"] { --hz: 56 }
+#h60:checked ~ *, [data-hz="60"] { --hz: 60 }
+#h67:checked ~ *, [data-hz="67"] { --hz: 67 }
+#h70:checked ~ *, [data-hz="70"] { --hz: 70 }
+#h72:checked ~ *, [data-hz="72"] { --hz: 72 }
+#h75:checked ~ *, [data-hz="75"] { --hz: 75 }
+#h90:checked ~ *, [data-hz="90"] { --hz: 90 }
+#h100:checked ~ *, [data-hz="100"] { --hz: 100 }
+#h120:checked ~ *, [data-hz="120"] { --hz: 120 }
+#h144:checked ~ *, [data-hz="144"] { --hz: 144 }
+#h180:checked ~ *, [data-hz="180"] { --hz: 180 }
+#h240:checked ~ *, [data-hz="240"] { --hz: 240 }
 
-#A:checked ~ *, [data-q="1"]  { --q:  980 }
-#B:checked ~ *, [data-q="2"]  { --q:  985 }
-#C:checked ~ *, [data-q="3"]  { --q:  990 }
-#D:checked ~ *, [data-q="4"]  { --q:  995 }
-#E:checked ~ *, [data-q="5"]  { --q:  998 }
-#F:checked ~ *, [data-q="6"]  { --q: 1000 }
-#G:checked ~ *, [data-q="7"]  { --q: 1002 }
-#H:checked ~ *, [data-q="8"]  { --q: 1005 }
-#I:checked ~ *, [data-q="9"]  { --q: 1010 }
-#J:checked ~ *, [data-q="10"] { --q: 1015 }
-#K:checked ~ *, [data-q="11"] { --q: 1020 }
-#L:checked ~ *, [data-q="12"] { --q: 1025 }
+#A:checked ~ *, [data-q="A"] { --q:  980 }
+#B:checked ~ *, [data-q="B"] { --q:  985 }
+#C:checked ~ *, [data-q="C"] { --q:  990 }
+#D:checked ~ *, [data-q="D"] { --q:  995 }
+#E:checked ~ *, [data-q="E"] { --q:  997 }
+#F:checked ~ *, [data-q="F"] { --q:  998 }
+#G:checked ~ *, [data-q="G"] { --q:  999 }
+#H:checked ~ *, [data-q="H"] { --q: 1000 }
+#I:checked ~ *, [data-q="I"] { --q: 1001 }
+#J:checked ~ *, [data-q="J"] { --q: 1002 }
+#K:checked ~ *, [data-q="K"] { --q: 1005 }
+#L:checked ~ *, [data-q="L"] { --q: 1010 }
+#M:checked ~ *, [data-q="M"] { --q: 1015 }
+#N:checked ~ *, [data-q="N"] { --q: 1020 }
+#O:checked ~ *, [data-q="O"] { --q: 1025 }
 
 /* leak back user data to server */
 
-#a:checked ~ h1 { background-image: url("a.jpeg") }
-#b:checked ~ h1 { background-image: url("b.jpeg") }
-#c:checked ~ h1 { background-image: url("c.jpeg") }
-#d:checked ~ h1 { background-image: url("d.jpeg") }
-#e:checked ~ h1 { background-image: url("e.jpeg") }
-#f:checked ~ h1 { background-image: url("f.jpeg") }
-#g:checked ~ h1 { background-image: url("g.jpeg") }
-#h:checked ~ h1 { background-image: url("h.jpeg") }
-#i:checked ~ h1 { background-image: url("i.jpeg") }
-#j:checked ~ h1 { background-image: url("j.jpeg") }
-#k:checked ~ h1 { background-image: url("k.jpeg") }
-#l:checked ~ h1 { background-image: url("l.jpeg") }
+#h30:checked ~ h1 { background-image: url("h30.jpeg") }
+#h40:checked ~ h1 { background-image: url("h40.jpeg") }
+#h50:checked ~ h1 { background-image: url("h50.jpeg") }
+#h56:checked ~ h1 { background-image: url("h56.jpeg") }
+#h60:checked ~ h1 { background-image: url("h60.jpeg") }
+#h67:checked ~ h1 { background-image: url("h67.jpeg") }
+#h70:checked ~ h1 { background-image: url("h70.jpeg") }
+#h72:checked ~ h1 { background-image: url("h72.jpeg") }
+#h75:checked ~ h1 { background-image: url("h75.jpeg") }
+#h90:checked ~ h1 { background-image: url("h90.jpeg") }
+#h100:checked ~ h1 { background-image: url("h100.jpeg") }
+#h120:checked ~ h1 { background-image: url("h120.jpeg") }
+#h144:checked ~ h1 { background-image: url("h144.jpeg") }
+#h180:checked ~ h1 { background-image: url("h180.jpeg") }
+#h240:checked ~ h1 { background-image: url("h240.jpeg") }
 
 #A:checked ~ .result { background-image: url("A.jpeg") }
 #B:checked ~ .result { background-image: url("B.jpeg") }
@@ -63,6 +72,9 @@
 #J:checked ~ .result { background-image: url("J.jpeg") }
 #K:checked ~ .result { background-image: url("K.jpeg") }
 #L:checked ~ .result { background-image: url("L.jpeg") }
+#M:checked ~ .result { background-image: url("M.jpeg") }
+#N:checked ~ .result { background-image: url("N.jpeg") }
+#O:checked ~ .result { background-image: url("O.jpeg") }
 
 /* expand table */
 
@@ -93,7 +105,7 @@ td > label:after
   text-align: center;
   padding-top: 2em;
   padding-bottom: 2em;
-  animation-duration: calc(1000ms * 1000 / var(--hz) / var(--q, 1010));
+  animation-duration: calc(1000ms * 1000 / var(--hz) / var(--q, 1005));
 }
 
 /* overlay two labels with offset, visible in alternating phase */
@@ -165,18 +177,21 @@ input[name],
 </style>
 </head>
 <body>
-  <input id=a name=r type=radio>
-  <input id=b name=r type=radio>
-  <input id=c name=r type=radio>
-  <input id=d name=r type=radio>
-  <input id=e name=r type=radio>
-  <input id=f name=r type=radio>
-  <input id=g name=r type=radio>
-  <input id=h name=r type=radio>
-  <input id=i name=r type=radio>
-  <input id=j name=r type=radio>
-  <input id=k name=r type=radio>
-  <input id=l name=r type=radio>
+  <input id=h30 name=r type=radio>
+  <input id=h40 name=r type=radio>
+  <input id=h50 name=r type=radio>
+  <input id=h56 name=r type=radio>
+  <input id=h60 name=r type=radio>
+  <input id=h67 name=r type=radio>
+  <input id=h70 name=r type=radio>
+  <input id=h72 name=r type=radio>
+  <input id=h75 name=r type=radio>
+  <input id=h90 name=r type=radio>
+  <input id=h100 name=r type=radio>
+  <input id=h120 name=r type=radio>
+  <input id=h144 name=r type=radio>
+  <input id=h180 name=r type=radio>
+  <input id=h240 name=r type=radio>
 
   <input id=A name=R type=radio>
   <input id=B name=R type=radio>
@@ -190,6 +205,9 @@ input[name],
   <input id=J name=R type=radio>
   <input id=K name=R type=radio>
   <input id=L name=R type=radio>
+  <input id=M name=R type=radio>
+  <input id=N name=R type=radio>
+  <input id=O name=R type=radio>
 
   <h1 class=run>Please click on the square that is the steadiest</h1>
   <br class=run>
@@ -197,20 +215,23 @@ input[name],
 
   <table class=run>
     <tr>
-      <td><label for=a data-hz=30></label><label for=A data-q=1></label>
-      <td><label for=b data-hz=40></label><label for=B data-q=2></label>
-      <td><label for=c data-hz=56></label><label for=C data-q=3></label>
-      <td><label for=d data-hz=60></label><label for=D data-q=4></label>
+      <td><label for=h30 data-hz=30></label><label for=A data-q=A></label>
+      <td><label for=h40 data-hz=40></label><label for=B data-q=B></label>
+      <td><label for=h50 data-hz=50></label><label for=C data-q=C></label>
+      <td><label for=h56 data-hz=56></label><label for=D data-q=D></label>
+      <td><label for=h60 data-hz=60></label><label for=E data-q=E></label>
     <tr>
-      <td><label for=e data-hz=70></label><label for=E data-q=5></label>
-      <td><label for=f data-hz=72></label><label for=F data-q=6></label>
-      <td><label for=g data-hz=75></label><label for=G data-q=7></label>
-      <td><label for=h data-hz=90></label><label for=H data-q=8></label>
+      <td><label for=h67 data-hz=67></label><label for=F data-q=F></label>
+      <td><label for=h70 data-hz=70></label><label for=G data-q=G></label>
+      <td><label for=h72 data-hz=72></label><label for=H data-q=H></label>
+      <td><label for=h75 data-hz=75></label><label for=I data-q=I></label>
+      <td><label for=h90 data-hz=90></label><label for=J data-q=J></label>
     <tr>
-      <td><label for=i data-hz=120></label><label for=I data-q=9></label>
-      <td><label for=j data-hz=144></label><label for=J data-q=10></label>
-      <td><label for=k data-hz=180></label><label for=K data-q=11></label>
-      <td><label for=l data-hz=240></label><label for=L data-q=12></label>
+      <td><label for=h100 data-hz=90></label><label for=K data-q=K></label>
+      <td><label for=h120 data-hz=120></label><label for=L data-q=L></label>
+      <td><label for=h144 data-hz=144></label><label for=M data-q=M></label>
+      <td><label for=h180 data-hz=180></label><label for=N data-q=N></label>
+      <td><label for=h240 data-hz=240></label><label for=O data-q=O></label>
   </table>
 
   <div class=result>
