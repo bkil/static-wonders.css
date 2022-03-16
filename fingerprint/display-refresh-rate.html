@@ -159,7 +159,9 @@ td > label:after {
 /* table modality: crude Hz, fine Hz, result */
 
 [name="r"]:checked ~ table [data-hz],
+[name="r"]:checked ~ .hz,
 [data-q],
+.q,
 .result,
 input[name],
 [name="R"]:checked ~ .run
@@ -168,9 +170,14 @@ input[name],
 }
 
 [name="r"]:checked ~ table [data-q],
+[name="r"]:checked ~ .q,
 [name="R"]:checked ~ .result
 {
-  display: initial;
+  display: revert;
+}
+
+[name="r"]:checked ~ [name="R"]:checked ~ .q {
+  display: none;
 }
 
 .rate:after {
@@ -213,7 +220,8 @@ input[name],
   <input id=N name=R type=radio>
   <input id=O name=R type=radio>
 
-  <h1 class=run>Please click on the square that is the steadiest</h1>
+  <h1 class='run hz'>Please click on the first square that is the steadiest and non-vibrating</h1>
+  <h1 class='run q'>Please click on the square that is the steadiest or most funny behaving</h1>
   <br class=run>
   <label for=z class=run>I am a robot, stop test</label>&nbsp;<input id=z type=checkbox autofocus class=run>
 
