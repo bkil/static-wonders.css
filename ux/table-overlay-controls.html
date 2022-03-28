@@ -56,14 +56,32 @@ th {
   background-color: #eee;
 }
 
-/* mobile compatibility */
+/* mobile compatibility and scrollbars */
 
 html, body, div {
   height: 100%;
 }
 
+body {
+  margin: 0;
+}
+
 div {
   overflow: scroll;
+}
+
+div::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: #888;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #111;
+}
+
+div::-webkit-scrollbar-corner {
+  background-color: #888;
 }
 
 /* filters */
