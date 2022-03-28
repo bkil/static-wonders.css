@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>UX table overlay controls</title>
+  <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
+  <meta name=viewport content='width=device-width, initial-scale=1.0'>
+
+<style>
+/* fill in table with mock data */
+
+table {
+  border-collapse: collapse;
+  counter-reset: tr -1;
+}
+
+tr {
+  height: 30vh;
+  counter-reset: td -1;
+  counter-increment: tr;
+}
+
+th, td {
+  min-width: 30vw;
+  border-width: 1px;
+  border-style: solid;
+  padding: 1rem;
+}
+
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: #ccc;
+}
+
+tr:nth-child(even) td:nth-child(odd) {
+  background-color: #ddd;
+}
+
+td::after, th::after {
+  content: counter(tr) ':' counter(td);
+  counter-increment: td;
+}
+
+/* sticky headers */
+
+thead th {
+  top: 0;
+  padding-top: 3.1rem;
+}
+
+tbody th {
+  left: 0;
+}
+
+th {
+  position: sticky;
+  background-color: #eee;
+}
+
+/* mobile compatibility */
+
+html, body, div {
+  height: 100%;
+}
+
+div {
+  overflow: scroll;
+}
+
+/* filters */
+
+#odd-rows:checked ~ table tbody tr:nth-child(even),
+#odd-cols:checked ~ table tr *:nth-child(odd):not(:first-child)
+{
+  height: initial;
+  min-width: initial;
+  font-size: 0;
+}
+
+/* overlay */
+
+#expand:not(:checked) ~ .panel
+{
+  display: none;
+}
+
+.top, .panel {
+  position: fixed;
+  background-color: white;
+  left: 0;
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+input {
+  margin-top: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+input.top {
+  z-index: 4;
+}
+
+input.panel {
+  z-index: 2;
+}
+
+label.top {
+  z-index: 3;
+}
+
+label.panel {
+  z-index: 1;
+}
+
+.top {
+  top: 0;
+}
+
+.l1 {
+  top: 3rem;
+}
+
+.l2 {
+  top: 6rem;
+}
+</style>
+
+<body>
+  <div>
+    <input type=checkbox id=expand class=top autofocus>
+    <label for=expand class=top>Expand: assume there can be dozens of filters</label>
+
+    <br class=panel>
+    <input type=checkbox id=odd-rows class='panel l1'>
+    <label for=odd-rows class='panel l1'>odd rows</label>
+
+    <input type=checkbox id=odd-cols class='panel l2'>
+    <label for=odd-cols class='panel l2'>odd cols</label>
+
+    <table>
+      <thead>
+        <tr><th><th> imhno<th><th><th><th><th>
+      <tbody>
+        <tr><th><td><td><td><td><td><td>
+        <tr><th><td><td><td><td><td><td>
+        <tr><th><td><td><td><td><td><td>
+        <tr><th><td><td><td><td><td><td>
+        <tr><th><td><td><td><td><td><td>
+    </table>
+  </div>
+</html>
