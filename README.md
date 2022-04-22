@@ -7,6 +7,8 @@ You could use these on a CDN, shared web hosting without SSI or `.htaccess` or s
 You can use them in a browser where JavaScript is disabled.
 
 * https://bkil.gitlab.io/static-wonders.css/fingerprint/display-refresh-rate.html
+* https://bkil.gitlab.io/static-wonders.css/riddle/fyvqref.html
+* https://bkil.gitlab.io/static-wonders.css/ux/table-overlay-controls.html
 
 See also:
 
