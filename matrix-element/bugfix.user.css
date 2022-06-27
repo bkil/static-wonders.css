@@ -1,0 +1,42 @@
+/* ==UserStyle==
+@name           Element bugfix
+@namespace      bkil.hu
+@version        2022.06.26
+@description    Fixes to UX bugs
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    /* Fix bug of overcollapsed image placeholder when disabling images */
+    .mx_MImageBody {
+        min-height: 100px;
+    }
+
+    /* when image previewing is disabled in Element Web,
+        it inserts an empty <img> for inline images */
+    img:not([src]) {
+        min-width: 64px;
+        min-height: 64px;
+        background-color: grey;
+    }
+
+    /* Do not chop off last characters from a link preview */
+    .mx_LinkPreviewWidget_description {
+        -webkit-line-clamp: initial;
+    }
+
+    /* decorate "cannot load previous event" error message in replies */
+    .mx_ReplyChain_error {
+        opacity: 0.3;
+        text-decoration: line-through;
+    }
+
+    /* Use a constant height for the message composer independent from the amount of text entered */
+    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:not(.mx_BasicMessageComposer_inputEmpty),
+    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:focus,
+    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:hover {
+        min-height: 140px;
+        /* the padding is within the scroll area, so not 100% perfect, but better than nothing */
+        padding-bottom: 2em;
+    }
+}

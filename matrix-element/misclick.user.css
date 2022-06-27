@@ -1,0 +1,54 @@
+/* ==UserStyle==
+@name           Element misclick
+@namespace      bkil.hu
+@version        2022.06.26
+@description    Disable rarely needed buttons
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    /* Make some rarely pressed buttons inactive */
+    .mx_RoomHeader_voiceCallButton,
+    .mx_RoomHeader_videoCallButton,
+    .mx_RightPanel_notifsButton,
+    .mx_MessageActionBar_downloadButton,
+    .mx_MessageActionBar_threadButton,
+    .mx_IconizedContextMenu .mx_IconizedContextMenu_item[aria-label="Quote"],
+    .mx_RoomSummaryCard_icon_files,
+    /* redundant, top one is conditional */
+    .mx_RoomSummaryCard_icon_pins,
+    /* `message` - can also access via `Start new chat` */
+    :not(.mx_UserInfo_buttons) > .mx_UserInfo_field:first-child,
+    /* `ignore` - discouraged if you are the mod */
+    :not(.mx_UserInfo_buttons) > .mx_UserInfo_destructive,
+    .mx_UserInfo_verifyButton,
+    /* E2EE in room settings */
+    .mx_ToggleSwitch[aria-label="Encrypted"],
+    /* Composer ... submenu */
+    .mx_AccessibleButton[aria-label="Voice Message"] > span,
+    .mx_AccessibleButton[aria-label="Location"] > span,
+    /* TODO: deprecated selectors */
+    .mx_MessageComposer_voiceMessage,
+    .mx_MessageComposer_location,
+    /* messages before the previous in the reply chain */
+    .mx_ReplyChain > span > span,
+    .mx_ReplyChain > span > a,
+    .mx_ReplyChain > span > button {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.3;
+        text-decoration: line-through;
+    }
+
+    /* open the profile instead of @-mentioning or just press `Reply` */
+    /* .mx_SenderProfile */
+    .mx_DisambiguatedProfile {
+        pointer-events: none;
+       cursor: default;
+    }
+
+    /* hide preset power values */
+    .mx_PowerSelector option:not([value="SELECT_VALUE_CUSTOM"]) {
+        display: none;
+    }
+}

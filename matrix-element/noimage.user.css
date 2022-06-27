@@ -1,0 +1,210 @@
+/* ==UserStyle==
+@name           Element no images
+@namespace      bkil.hu
+@version        2022.06.26
+@description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    .mx_AccessibleButton {
+        font-size: xx-small;
+    }
+
+    div.mx_AccessibleButton[aria-label]:not(.mx_MemberStatusMessageAvatar, .mx_MessageActionBar_maskButton, .mx_RoomTile, [role="menuitem"], [role="switch"])::after {
+        content: attr(aria-label);
+        outline: auto;
+        line-height: initial;
+    }
+
+    .mx_EventTile:not([data-layout=bubble]).mx_EventTile_info .mx_EventTile_avatar {
+        position: initial;
+    }
+
+    div.mx_AccessibleButton[aria-label].mx_MessageActionBar_maskButton::before {
+        content: attr(aria-label);
+        outline: auto;
+        line-height: initial;
+    }
+
+
+    .mx_EmojiPicker_anchor::after {
+        content: attr(title);
+        font-size: xx-small;
+    }
+
+
+    .mx_EventTile_readAvatars {
+        width: initial;
+        height: initial;
+        top: initial;
+    }
+
+    .mx_EventTile_readAvatars .mx_AccessibleButton {
+        left: initial !important;
+    }
+
+    .mx_BaseAvatar.mx_BaseAvatar_image {
+        visibility: hidden;
+    }
+
+    .mx_BaseAvatar_image {
+        border: 1px solid;
+    }
+
+    .mx_EventTile_readAvatars .mx_BaseAvatar_image,
+    .mx_EventTile_readAvatars span.mx_BaseAvatar {
+        height: 4em !important;
+        width: 9em !important;
+        position: initial;
+        border-radius: initial;
+        /*
+        transform: rotate(-90deg);
+        */
+    }
+
+    .mx_BaseAvatar_initial {
+        display: none;
+    }
+
+    .mx_EventTile_readAvatarRemainder {
+        position: initial;
+    }
+
+    .mxEventTitle_msgOption,
+    .mx_EventTile:not([data-layout=bubble]) .mx_EventTile_msgOption {
+        width: initial;
+        height: initial;
+        text-align: initial;
+    }
+
+    .mx_EventTile_avatar .mx_BaseAvatar_image {
+        width: initial !important;
+    }
+
+    .mx_RoomView_body .mx_BaseAvatar_image[title]::before {
+        visibility: visible;
+        content: attr(title);
+    }
+
+    .mx_GroupLayout .mx_EventTile > .mx_DisambiguatedProfile {
+        margin-left: 128px;
+    }
+
+    .mx_MemberList_wrapper .mx_EntityTile[title]::after {
+        content: attr(title);
+    }
+
+    .mx_MessageActionBar .mx_AccessibleButton {
+        width: 5em;
+        height: 4em;
+        overflow: visible;
+        color: initial;
+    }
+
+    /* Add fixed caption to a few buttons manually */
+    /* close reply panel */
+    .mx_ReplyPreview .mx_ReplyPreview_section .mx_ReplyPreview_header .mx_ReplyPreview_header_cancel {
+        width: initial;
+        height: initial;
+        mask: initial;
+        -webkit-mask: initial;
+        background-color: initial;
+    }
+
+    .mx_ReplyPreview_header_cancel::before,
+    .mx_ReplyPreview_cancel::before {
+        content: 'cancel';
+    }
+
+    .mx_ReplyPreview_cancel > img {
+        outline: auto;
+    }
+
+    /* scroll up in chat log to first unread message */
+    div.mx_TopUnreadMessagesBar_scrollUp[role]::after {
+        font-size: x-large;
+        content: 'up';
+        outline: initial;
+    }
+
+    /* jump to most recent messages in chat log */
+    div.mx_JumpToBottomButton_scrollDown[role]::after {
+        font-size: small;
+        content: 'down';
+        outline: initial;
+    }
+
+    /* make chat log read */
+    div.mx_TopUnreadMessagesBar_markAsRead[role]::after {
+        font-size: medium;
+        content: 'x';
+        outline: initial;
+    }
+
+    /* copy to clipboard, for example an Id or share URL */
+    .mx_ShareDialog_matrixto_copy::before {
+        content: 'copy';
+    }
+
+    /* close side panel */
+    .mx_BaseCard .mx_BaseCard_header .mx_BaseCard_back,
+    .mx_BaseCard .mx_BaseCard_header .mx_BaseCard_close {
+        width: 3em;
+    }
+
+    div.mx_BaseCard_close[role]::after {
+        content: 'close';
+        outline: initial;
+    }
+
+    /* back side panel */
+    div.mx_BaseCard_back[role]::after {
+        content: 'back';
+        outline: initial;
+    }
+
+    /* explore rooms server picker help */
+    .mx_ServerPicker_help::after {
+        content: 'help';
+    }
+
+    /* room search */
+    .mx_SearchBar_searchButton::after {
+        content: 'search';
+    }
+    .mx_SearchBar_cancel::after {
+        content: 'cancel';
+    }
+    .mx_RoomSearch_clearButton::after {
+        content: 'clear';
+    }
+
+    /* if an option is activated/checked */
+    .mx_Checkbox_checkmark::after {
+        content: '+';
+    }
+
+    .mx_Checkbox input[type=checkbox] + label > .mx_Checkbox_background .mx_Checkbox_checkmark {
+        -webkit-mask-image: initial;
+    }
+
+    .mx_AccessibleButton[role]:not([role="switch"]) {
+        -webkit-mask-image: initial;
+        background-color: initial;
+    }
+
+    /* make certain buttons visible that were white on green, e.g., "Save" */
+    .mx_ServerPicker .mx_ServerPicker_help,
+    .mx_AccessibleButton_kind_primary,
+    .mx_MemberList_invite,
+    .mx_AccessibleButton.mx_AccessibleButton_kind_primary {
+        color: initial;
+    }
+
+    /* indicate current tab in settings panel */
+    .mx_TabbedView_tabsOnLeft .mx_TabbedView_tabLabel_active {
+        color: initial;
+        outline: auto;
+    }
+}

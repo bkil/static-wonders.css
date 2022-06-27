@@ -1,0 +1,58 @@
+/* ==UserStyle==
+@name           Element emoji name
+@namespace      bkil.hu
+@version        2022.06.26
+@description    If hovering over a line, show name of emoji and switch font from default set in the user settings
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    /* Show names of emoji in messages, speech balloon is used by our Matterbridge bot */
+    .mx_Emoji:not([title=":speech_balloon:"])::after {
+        content: attr(title);
+        font-size: xx-small;
+    }
+
+    /* choose a local emoji font instead of a remote one */
+    /* this can actually be changed from the settings nowadays */
+    /*
+    .mx_Emoji,
+    .mx_BasicMessageComposer_input,
+    .mx_EmojiPicker_item,
+    .mx_Autocomplete_Completion_container_pill[aria-label="Emoji Autocomplete"] > .mx_Autocomplete_Completion {
+        font-family: "Noto Color Emoji", "Noto Emoji", "Symbola", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji Mozilla", "EmojiOne Mozilla", "EmojiOne", "EmojiTwo", "Twitter Color Emoji", "JoyPixels", "FxEmojis", "FirefoxEmoji", "Adobe Source Emoji", "OpenMoji-Color", "OpenMoji-Black", "Quivira", emoji, ui-sans-serif, system-ui, none;
+        font-size: xx-large;
+        line-height: 1em;
+    }
+    */
+
+    /* Show emoji with legacy font in message on hover */
+    .mx_EventTile:hover .mx_Emoji,
+    /* Show reactji with legacy font on message hover */
+    .mx_EventTile:hover .mx_ReactionsRowButton_content,
+    /* Show emoji with legacy font in composer on hover */
+    .mx_BasicMessageComposer_input:hover .mx_Emoji {
+        font-family: "Noto Color Emoji", "Noto Emoji", "Symbola", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji Mozilla", "EmojiOne Mozilla", "EmojiOne", "EmojiTwo", "Twitter Color Emoji", "JoyPixels", "FxEmojis", "FirefoxEmoji", "Adobe Source Emoji", "OpenMoji-Color", "OpenMoji-Black", "Quivira", emoji, ui-sans-serif, system-ui, none;
+        font-size: xx-large;
+        line-height: 1em;
+    }
+
+    /* Show emoji with legacy font as well in picker */
+    .mx_EmojiPicker_item_wrapper::after,
+    /* Show emoji with legacy font in message composer autocomplete */
+    .mx_Autocomplete_Completion_container_pill[aria-label="Emoji Autocomplete"] > .mx_Autocomplete_Completion::before {
+        font-family: "Noto Color Emoji", "Noto Emoji", "Symbola", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji Mozilla", "EmojiOne Mozilla", "EmojiOne", "EmojiTwo", "Twitter Color Emoji", "JoyPixels", "FxEmojis", "FirefoxEmoji", "Adobe Source Emoji", "OpenMoji-Color", "OpenMoji-Black", "Quivira", emoji, ui-sans-serif, system-ui, none;
+        font-size: xx-large;
+        content: attr(aria-label);
+        padding-right: 0.5em;
+        min-width: 2em;
+    }
+
+    /* Hide emoji names in message on hover */
+    .mx_EventTile_content:not(:hover) .mx_Emoji::after,
+    .mx_EventTile_body:not(:hover) .mx_Emoji::after,
+    /* Hide emoji names in composer on hover */
+    .mx_BasicMessageComposer_input:hover .mx_Emoji::after {
+        content: '';
+    }
+}

@@ -1,0 +1,77 @@
+/* ==UserStyle==
+@name           Element media on hover
+@namespace      bkil.hu
+@version        2022.06.26
+@description    Reveal multimedia preview on mouse hover
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    /* Only reveal video widget on hover */
+    .mx_MVideoBody_container {
+        min-height: 299px;
+        width: 324px;
+        display: block;
+        outline: auto;
+    }
+
+    .mx_MVideoBody_container video {
+        display: none;
+    }
+
+    .mx_MVideoBody_container::before {
+        position: absolute;
+        content: '(hover to reveal video player)';
+        text-align: center;
+        width: inherit;
+        top: 50%;
+    }
+
+    .mx_MVideoBody_container:hover video {
+        display: initial;
+    }
+
+    .mx_MVideoBody_container:hover::before {
+        opacity: 0;
+    }
+
+    /* Only reveal image widget on hover */
+    .mx_MImageBody_thumbnail_container {
+        width: 100%;
+        /*
+        max-height: initial !important;
+        aspect-ratio: initial !important;
+        min-height: 100px;
+        */
+        outline: auto;
+    }
+
+    .mx_MImageBody_thumbnail,
+    .mx_MImageBody_placeholder {
+        display: none;
+    }
+
+    .mx_MImageBody_thumbnail_container::before {
+        position: absolute;
+        content: '(hover to preview image)';
+        text-align: center;
+        width: inherit;
+    }
+
+    .mx_MImageBody > a > .mx_MImageBody_thumbnail_container:before {
+        top: 50%;
+    }
+
+    .mx_MImageReplyBody .mx_MImageBody_thumbnail_container:before {
+        font-size: xx-small;
+    }
+
+    .mx_MImageBody_thumbnail_container:hover img,
+    .mx_MImageBody_thumbnail_container:hover .mx_MImageBody_placeholder {
+        display: initial;
+    }
+
+    .mx_MImageBody_thumbnail_container:hover::before {
+        opacity: 0;
+    }
+}

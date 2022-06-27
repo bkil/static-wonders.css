@@ -1,0 +1,14 @@
+/* ==UserStyle==
+@name           Element no upload
+@namespace      bkil.hu
+@version        2022.06.26
+@description    If you are uploading files exclusively from app.element.io and want to disable the button on your other HS to reduce confusion
+@author         bkil
+==/UserStyle== */
+@-moz-document url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    .mx_MessageComposer_upload {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.3;
+    }
+}
