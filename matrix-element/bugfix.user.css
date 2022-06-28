@@ -32,9 +32,13 @@ url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://
     }
 
     /* Use a constant height for the message composer independent from the amount of text entered */
+    /*
     .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:not(.mx_BasicMessageComposer_inputEmpty),
     .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:focus,
-    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:hover {
+    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:hover
+    */
+    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input
+     {
         min-height: 140px;
         /* the padding is within the scroll area, so not 100% perfect, but better than nothing */
         padding-bottom: 2em;
