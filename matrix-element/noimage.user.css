@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.06.26
+@version        2022.06.27
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -198,7 +198,8 @@ url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://
     .mx_ServerPicker .mx_ServerPicker_help,
     .mx_AccessibleButton_kind_primary,
     .mx_MemberList_invite,
-    .mx_AccessibleButton.mx_AccessibleButton_kind_primary {
+    .mx_AccessibleButton.mx_AccessibleButton_kind_primary,
+    .mx_AccessibleButton.mx_AccessibleButton_hasKind.mx_AccessibleButton_kind_primary_sm {
         color: initial;
     }
 
