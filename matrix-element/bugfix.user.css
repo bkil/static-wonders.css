@@ -1,12 +1,14 @@
 /* ==UserStyle==
 @name           Element bugfix
 @namespace      bkil.hu
-@version        2022.06.27
+@version        2022.07.09
 @description    Fixes to UX bugs
 @author         bkil
 ==/UserStyle== */
 @-moz-document domain("app.element.io"),
-url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+url-prefix("https://riot."),
+url-prefix("https://matrix."),
+url-prefix("https://element.") {
     /* Fix bug of overcollapsed image placeholder when disabling images */
     .mx_MImageBody {
         min-height: 100px;
@@ -37,10 +39,27 @@ url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://
     .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:focus,
     .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input:hover
     */
-    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input
-     {
+    .mx_SendMessageComposer .mx_BasicMessageComposer .mx_BasicMessageComposer_input {
         min-height: 140px;
         /* the padding is within the scroll area, so not 100% perfect, but better than nothing */
         padding-bottom: 2em;
+    }
+
+    /* remove overlay gradient from end of room list */
+    .mx_RoomSublist .mx_RoomSublist_resizeBox .mx_RoomSublist_tiles,
+    .mx_RoomSublist_tiles {
+        -webkit-mask-image: initial;
+        mask-image: initial;
+    }
+
+    /* don't chop off end of room list when images are disabled */
+    .mx_RoomSublist_resizeBox {
+        height: initial !important;
+        max-height: initial !important;
+    }
+
+    .mx_RoomSublist .mx_RoomSublist_resizeBox,
+    .mx_RoomSublist .mx_RoomSublist_resizeBox .mx_RoomSublist_tiles {
+        display: initial;
     }
 }

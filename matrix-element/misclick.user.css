@@ -1,12 +1,14 @@
 /* ==UserStyle==
 @name           Element misclick
 @namespace      bkil.hu
-@version        2022.06.26
+@version        2022.07.09
 @description    Disable rarely needed buttons
 @author         bkil
 ==/UserStyle== */
 @-moz-document domain("app.element.io"),
-url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+url-prefix("https://riot."),
+url-prefix("https://matrix."),
+url-prefix("https://element.") {
     /* Make some rarely pressed buttons inactive */
     .mx_RoomHeader_voiceCallButton,
     .mx_RoomHeader_videoCallButton,
@@ -44,7 +46,7 @@ url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://
     /* .mx_SenderProfile */
     .mx_DisambiguatedProfile {
         pointer-events: none;
-       cursor: default;
+        cursor: default;
     }
 
     /* hide preset power values */
