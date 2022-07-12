@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misc improvements
 @namespace      bkil.hu
-@version        2022.07.09
+@version        2022.07.10
 @description    Some are subjective and my not always apply
 @author         bkil
 ==/UserStyle== */
@@ -20,15 +20,22 @@ url-prefix("https://element.") {
     }
 
     /* Hide the name of a room */
-    .mx_Pill.mx_RoomPill[href] {
+    .mx_Pill:not(.mx_UserPill)[href] {
         font-size: 0;
     }
 
     /* Show room alias with matrix.to/ chopped off from the beginning of the URL */
-    .mx_Pill.mx_RoomPill[href]::after {
+    .mx_Pill:not(.mx_UserPill)[href]::after {
         font-size: initial;
         content: attr(href);
-        margin-left: -8.9em;
         padding-right: 0.5em;
+    }
+
+    .mx_Pill:not(.mx_UserPill)[href^="https://matrix.to/#/#"]::after {
+        margin-left: -8.9em;
+    }
+
+    .mx_Pill:not(.mx_UserPill)[href^="#/room/#"]::after {
+        margin-left: -3.7em;
     }
 }
