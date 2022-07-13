@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.06.27
+@version        2022.07.10
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
 @-moz-document domain("app.element.io"),
-url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
-    .mx_AccessibleButton {
+url-prefix("https://riot."),
+url-prefix("https://matrix."),
+url-prefix("https://element.") {
+    .mx_AccessibleButton,
+    .mx_EventTile_button {
         font-size: xx-small;
     }
 
@@ -103,6 +106,7 @@ url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://
     }
 
     /* Add fixed caption to a few buttons manually */
+    .mx_EventTile_body .mx_EventTile_pre_container .mx_EventTile_button,
     /* close reply panel */
     .mx_ReplyPreview .mx_ReplyPreview_section .mx_ReplyPreview_header .mx_ReplyPreview_header_cancel {
         width: initial;
@@ -144,6 +148,15 @@ url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://
 
     /* copy to clipboard, for example an Id or share URL */
     .mx_ShareDialog_matrixto_copy::before {
+        content: 'copy';
+    }
+
+    /* preformatted code block */
+    .mx_EventTile_expandButton::before {
+        content: 'expand';
+    }
+
+    .mx_EventTile_copyButton::before {
         content: 'copy';
     }
 
