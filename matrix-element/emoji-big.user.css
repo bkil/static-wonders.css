@@ -1,16 +1,23 @@
 /* ==UserStyle==
 @name           Element emoji big
 @namespace      bkil.hu
-@version        2022.06.26
+@version        2022.07.15
 @description    Make emoji bigger and the line resize less on hover resize the content less
 @author         bkil
 ==/UserStyle== */
 @-moz-document domain("app.element.io"),
 url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
+    /* make inline emoji bigger */
     .mx_EventTile .mx_Emoji,
+    /* make reaction emoji bigger */
     .mx_EventTile .mx_ReactionsRowButton_content {
         font-size: xx-large;
         line-height: 1em;
         min-width: 1em;
+    }
+
+    /* increase max width of textual reactions along with its height change */
+    .mx_ReactionsRowButton .mx_ReactionsRowButton_content {
+        max-width: 10em;
     }
 }
