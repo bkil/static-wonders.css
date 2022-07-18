@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.07.10
+@version        2022.07.15
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -9,11 +9,13 @@
 url-prefix("https://riot."),
 url-prefix("https://matrix."),
 url-prefix("https://element.") {
-    .mx_AccessibleButton,
+    /* make alt text small */
+    .mx_AccessibleButton:not(.mx_ReactionsRowButton),
     .mx_EventTile_button {
         font-size: xx-small;
     }
 
+    /* show alt text along some buttons */
     div.mx_AccessibleButton[aria-label]:not(.mx_MemberStatusMessageAvatar, .mx_MessageActionBar_maskButton, .mx_RoomTile, [role="menuitem"], [role="switch"])::after {
         content: attr(aria-label);
         outline: auto;
