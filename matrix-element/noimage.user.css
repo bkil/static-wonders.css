@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.07.15
+@version        2022.07.16
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -111,11 +111,19 @@ url-prefix("https://element.") {
     .mx_EventTile_body .mx_EventTile_pre_container .mx_EventTile_button,
     /* close reply panel */
     .mx_ReplyPreview .mx_ReplyPreview_section .mx_ReplyPreview_header .mx_ReplyPreview_header_cancel {
+        background-color: initial;
+    }
+
+    /* Add fixed caption to a few buttons manually */
+    .mx_EventTile_body .mx_EventTile_pre_container .mx_EventTile_button,
+    /* close reply panel */
+    .mx_ReplyPreview .mx_ReplyPreview_section .mx_ReplyPreview_header .mx_ReplyPreview_header_cancel,
+    /* delete room alias */
+    .mx_EditableItem_delete {
         width: initial;
         height: initial;
         mask: initial;
         -webkit-mask: initial;
-        background-color: initial;
     }
 
     .mx_ReplyPreview_header_cancel::before,
@@ -194,6 +202,10 @@ url-prefix("https://element.") {
     .mx_RoomSearch_clearButton::after {
         content: 'clear';
     }
+    /* delete room alias */
+    .mx_EditableItem_delete::after {
+        content: 'delete';
+    }
 
     /* if an option is activated/checked */
     .mx_Checkbox_checkmark::after {
@@ -207,6 +219,11 @@ url-prefix("https://element.") {
     .mx_AccessibleButton[role]:not([role="switch"]) {
         -webkit-mask-image: initial;
         background-color: initial;
+    }
+
+    /* make "no" confirmation at room alias removal visible */
+    .mx_AccessibleButton.mx_AccessibleButton_hasKind.mx_AccessibleButton_kind_danger_sm {
+        color: initial;
     }
 
     /* make certain buttons visible that were white on green, e.g., "Save" */
