@@ -1,0 +1,21 @@
+/* ==UserStyle==
+@name           Integrations improvements
+@namespace      bkil.hu
+@version        2022.07.16
+@description    Some are subjective and my not always apply
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("scalar.vector.im") {
+    /* colorize current row in the settings - it's too wide */
+    /* RSS bot integration */
+    .sc_RssBotComponent_feed_entry
+    {
+        border: 1px solid white;
+    }
+
+    .sc_RssBotComponent_feed_entry:hover
+    {
+        border: 1px solid black;
+        background-color: #eee;
+    }
+}
