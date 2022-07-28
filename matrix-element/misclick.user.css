@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misclick
 @namespace      bkil.hu
-@version        2022.07.09
+@version        2022.07.25
 @description    Disable rarely needed buttons
 @author         bkil
 ==/UserStyle== */
@@ -34,6 +34,8 @@ url-prefix("https://element.") {
     .mx_MessageComposer_location,
     /* messages before the previous in the reply chain */
     .mx_ReplyChain > span > span,
+    .mx_ReplyChain > span > div,
+    .mx_ReplyChain > span > bdi,
     .mx_ReplyChain > span > a,
     .mx_ReplyChain > span > button {
         pointer-events: none;
