@@ -1,0 +1,195 @@
+/* ==UserStyle==
+@name           hup.hu noCookie, noImages, tweaks
+@namespace      bkil.hu
+@version        2022.08.01
+@description    Remove cookie and signup nagging banners. Make it usable with images disabled. Reduce clutter on interface by removing redundant edges. Tested both when logged in and when browsing as anonymous.
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("hup.hu") {
+    /* hide cookie banner at the bottom */
+    #sliding-popup {
+        /* !important in original style */
+        display: none !important;
+    }
+
+    /* hide opening parenthesis and pipe at beginning of comment header */
+    .comment__submitted > a,
+    .comment__submitted > span {
+        position: absolute;
+        left: -8.42em;
+        width: 8.42em;
+        padding-right: 1.7em;
+        background-color: #d8d8c4;
+    }
+
+    #block-hup-theme-content article.comment .username_postfix {
+        position: absolute;
+        left: 0;
+        top: initial;
+    }
+
+    .comment__submitted {
+        position: relative;
+        left: 8.42em;
+        width: calc(50% - 8.42em);
+    }
+
+    /* Easter egg */
+    .comment__submitted > [about="/user/20377"]::after {
+        content: "λ";
+        position: absolute;
+        left: 8.42rem;
+
+        background: #000;
+        border-radius: 0 0.2rem 0 0.2rem;
+        color: #d8d8c4;
+        font-size: 0.6rem;
+        font-weight: 400;
+        opacity: 0.5;
+        padding: 0.1rem 0.3rem;
+    }
+
+    /* hide closing parenthesis after timestamp */
+    .comment__submitted::after {
+        content: " ";
+        position: relative;
+        left: -0.5em;
+        padding-left: 1em;
+        background-color: #d8d8c4;
+    }
+
+    /* Make each comment signature less obtrusive. Note that some very old threads will still have signatures baked into the database. */
+    .comment .field--name-signature {
+        opacity: 0.3;
+        text-align: right;
+        font-style: italic;
+        margin-left: 50%;
+    }
+
+    #block-hup-theme-content article.comment .content .field--name-signature {
+        border-top: initial;
+    }
+
+    /* make comment reaction widgets less obtrusive and align to the right */
+    #block-hup-theme-content article.comment .content .comment-links-wrapper ul.links {
+        width: initial;
+    }
+
+    #block-hup-theme-content article.comment .content .comment-links-wrapper {
+        justify-content: flex-end;
+        background-color: initial;
+    }
+
+    #block-hup-theme-content article.comment.by-viewer .comment-links-wrapper {
+        /* !important in original style */
+        background-color: initial !important;
+    }
+
+
+    /* fade bottom like and reply unless hovered */
+    .comment-links-wrapper > span:not(:hover),
+    .comment-links-wrapper > ul:not(:hover) {
+        opacity: 0.3;
+    }
+
+    /* draw border around like and reply when hovered */
+    .links_before {
+        padding-right: 0.5rem;
+    }
+
+    .links_before,
+    #block-hup-theme-content article.comment .content .comment-links-wrapper ul.links {
+        padding-bottom: 0.5rem;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+    }
+
+    .links_before:not(:hover),
+    #block-hup-theme-content article.comment .content .comment-links-wrapper ul.links:not(:hover) {
+        border-color: #f6f6eb;
+    }
+
+    /* hide comment borders */
+    #block-hup-theme-content article.comment {
+        border: initial;
+        margin-bottom: 0.5rem;
+    }
+
+    /* hide login nagging above each comment */
+    ul li.comment-forbidden {
+        display: none;
+    }
+
+    /* substitute text for top comment action icons */
+    #block-hup-theme-content article.comment .comment_info_wrapper .comment__meta .comment_links > a[title],
+    #block-hup-theme-content article.comment .comment_info_wrapper .comment__meta .edited {
+        font: xx-small serif;
+        color: initial;
+        width: initial;
+        height: initial;
+    }
+
+    /* TODO: this may push out a few buttons in case of insufficient width */
+    #block-hup-theme-content article.comment .comment_info_wrapper .comment__meta .edited {
+        text-indent: initial;
+        float: right;
+    }
+
+    /* make the text labels wrap if there are too many, subtract <mark> */
+    .comment_links {
+        max-width: calc(50% - 4em);
+    }
+
+    /* fade top right comment links when not hovered */
+    .comment_links > a:not(:hover) {
+        opacity: 0.3;
+    }
+
+    .edited:not(:hover) {
+        opacity: 0.3;
+    }
+
+    /* substitute text for editor widget icons when images are disabled */
+    .cke_button__bold::before {
+        content: "bold"
+    }
+    .cke_button__italic::before {
+        content: "italic"
+    }
+    .cke_button__underline::before {
+        content: "underline"
+    }
+    .cke_button__strike::before {
+        content: "strike"
+    }
+    .cke_button__drupallink::before {
+        content: "link"
+    }
+    .cke_button__drupalunlink::before {
+        content: "unlink"
+    }
+    .cke_button__bulletedlist::before {
+        content: "list"
+    }
+    .cke_button__numberedlist::before {
+        content: "enum"
+    }
+    .cke_button__indent::before {
+        content: "indent"
+    }
+    .cke_button__outdent::before {
+        content: "outdent"
+    }
+    .cke_button__drupalimage::before {
+        content: "image"
+    }
+    .cke_button__blockquote::before {
+        content: "quote"
+    }
+    .cke_button__table::before {
+        content: "table"
+    }
+    .cke_button__codesnippet::before {
+        content: "snippet"
+    }
+}
