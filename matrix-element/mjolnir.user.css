@@ -1,0 +1,44 @@
+/* ==UserStyle==
+@name           Matrix Mjolnir ignore bot
+@namespace      bkil.hu
+@version        2022.07.15
+@description    Collapse uninteresting messages of Mjolnir in the control room for a better overview
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."),
+url-prefix("https://matrix."),
+url-prefix("https://element.") {
+    /* collapse notices that start with a red message */
+    .mx_MNoticeBody:not(:hover) .markdown-body > font[color="#ff0000"]:first-child ~ *,
+    /* collapse parts of a common spam */
+    .mx_MNoticeBody:not(:hover) a[href$="/@wybpip:matrix.org"],
+    .mx_MNoticeBody:not(:hover) a[href$="/@wybpip:matrix.org"] ~ *,
+    /* collapse replies about room list and help */
+    .mx_MNoticeBody:not(:hover) .markdown-body > b:first-child ~ * {
+        visibility: hidden;
+        height: 1rem;
+    }
+
+    /* reduce visibility of bot replies */
+    .mx_MNoticeBody .markdown-body {
+        opacity: 0.5;
+    }
+
+    .mx_MNoticeBody .markdown-body {
+        font-size: xx-small;
+    }
+
+    .mx_MNoticeBody .markdown-body > font[color="#ff0000"]:first-child > b {
+        color: initial;
+        font-weight: initial;
+    }
+
+    /* restore visibility of external bans */
+    .mx_MNoticeBody .markdown-body > span:first-child,
+    .mx_MNoticeBody .markdown-body > span:first-child ~ * {
+        opacity: 1;
+        font-size: initial;
+        font-weight: bold;
+    }
+}
