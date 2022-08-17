@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.08.14
+@version        2022.08.15
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -20,6 +20,12 @@ url-prefix("https://element.") {
         content: attr(aria-label);
         outline: auto;
         line-height: initial;
+    }
+
+    /* underline read receipts */
+    div.mx_ReadReceiptGroup_button[aria-label]:not(.mx_MemberStatusMessageAvatar, .mx_MessageActionBar_maskButton, .mx_RoomTile, [role="menuitem"], [role="switch"])::after {
+      outline: initial;
+      border-bottom: 1px solid;
     }
 
     .mx_EventTile:not([data-layout=bubble]).mx_EventTile_info .mx_EventTile_avatar {
@@ -99,7 +105,7 @@ url-prefix("https://element.") {
         position: initial;
     }
 
-    /* increase width of read receipts */
+    /* increase width of read receipts, fix height at page bottom */
     .mxEventTitle_msgOption,
     .mx_EventTile:not([data-layout=bubble]) .mx_EventTile_msgOption {
         width: initial;
@@ -108,14 +114,33 @@ url-prefix("https://element.") {
         margin-right: initial;
     }
 
-    .mx_EventTile_avatar .mx_BaseAvatar_image {
-        width: initial !important;
+    .mx_ReadReceiptGroup .mx_ReadReceiptGroup_button {
+        padding: initial;
+    }
+
+    .mx_ReadReceiptGroup {
+        display: initial;
+        position: initial;
+    }
+
+    .mx_ReadReceiptGroup .mx_ReadReceiptGroup_button {
+        display: initial;
+    }
+
+    /* make lines more dense */
+    .mx_EventTile[data-layout=group] .mx_EventTile_line,
+    .mx_EventTile[data-layout=group] .mx_EventTile_reply {
+        line-height: initial;
     }
 
     /* show mxid instead of avatar */
     .mx_RoomView_body .mx_BaseAvatar_image[title]::before {
         visibility: visible;
         content: attr(title);
+    }
+
+    .mx_EventTile_avatar .mx_BaseAvatar_image {
+        width: initial !important;
     }
 
     .mx_MemberList_wrapper .mx_EntityTile[title]::after {
