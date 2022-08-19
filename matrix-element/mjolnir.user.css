@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Matrix Mjolnir ignore bot
 @namespace      bkil.hu
-@version        2022.07.15
+@version        2022.08.12
 @description    Collapse uninteresting messages of Mjolnir in the control room for a better overview
 @author         bkil
 ==/UserStyle== */
@@ -21,7 +21,7 @@ url-prefix("https://element.") {
     }
 
     /* reduce visibility of bot replies */
-    .mx_MNoticeBody .markdown-body {
+    .mx_MNoticeBody:not(:hover) .markdown-body {
         opacity: 0.5;
     }
 
