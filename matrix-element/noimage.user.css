@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.08.25
+@version        2022.09.01
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -22,10 +22,15 @@ url-prefix("https://element.") {
         line-height: initial;
     }
 
+    /* limit line wrapping in room breadcrumb */
+    .mx_RoomBreadcrumbs_crumb {
+        max-height: 8rem;
+    }
+
     /* underline read receipts */
     div.mx_ReadReceiptGroup_button[aria-label]:not(.mx_MemberStatusMessageAvatar, .mx_MessageActionBar_maskButton, .mx_RoomTile, [role="menuitem"], [role="switch"])::after {
-      outline: initial;
-      border-bottom: 1px solid;
+        outline: initial;
+        border-bottom: 1px solid;
     }
 
     .mx_EventTile:not([data-layout=bubble]).mx_EventTile_info .mx_EventTile_avatar {
