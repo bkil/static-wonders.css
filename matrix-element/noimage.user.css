@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.09.01
+@version        2022.09.06
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -58,6 +58,11 @@ url-prefix("https://element.") {
 
     .mx_EventTile_readAvatars .mx_AccessibleButton {
         left: initial !important;
+    }
+
+    /* reveal buttons of danger */
+    .mx_AccessibleButton.mx_AccessibleButton_kind_danger {
+        color: initial;
     }
 
     /* hide user avatar */
