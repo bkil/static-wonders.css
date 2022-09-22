@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.09.06
+@version        2022.09.18
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -255,6 +255,11 @@ url-prefix("https://element.") {
     /* explore rooms server picker help */
     .mx_ServerPicker_help::after {
         content: 'help';
+    }
+
+    /* poll creation: remove choice */
+    .mx_PollCreateDialog_removeOption::after {
+        content: 'remove';
     }
 
     /* room search */
