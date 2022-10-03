@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misc improvements
 @namespace      bkil.hu
-@version        2022.07.16
+@version        2022.09.30
 @description    Some are subjective and my not always apply
 @author         bkil
 ==/UserStyle== */
@@ -40,12 +40,12 @@ url-prefix("https://element.") {
     }
 
     /* colorize current row in the settings - it's too wide */
-    /* room aliases */
-    #roomAliases .mx_EditableItem {
+    /* room aliases, alt aliases */
+    .mx_EditableItemList .mx_EditableItem {
         border: 1px solid white;
     }
 
-    #roomAliases .mx_EditableItem:hover {
+    .mx_EditableItemList .mx_EditableItem:hover {
         border: 1px solid black;
         background-color: #eee;
     }
