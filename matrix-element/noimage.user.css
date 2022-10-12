@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.09.30
+@version        2022.10.02
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -320,7 +320,18 @@ url-prefix("https://element.") {
     }
 
     /* message sending indicator */
-    .mx_EventTile_sending .mx_ReadReceiptGroup::after {
-      content: 'sending';
+    .mx_EventTile_sending .mx_EventTile_receiptSending::after {
+        content: 'sending';
+        font-size: xx-small;
+    }
+
+    .mx_EventTile_sending .mx_EventTile_receiptSending {
+        width: initial;
+    }
+
+    /* The authenticity of this encrypted message can't be guaranteed on this device */
+    .mx_EventTile_e2eIcon.mx_EventTile_e2eIcon_normal::before {
+        content: '!';
+        background-color: red;
     }
 }
