@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.10.02
+@version        2022.10.03
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -332,6 +332,12 @@ url-prefix("https://element.") {
     /* The authenticity of this encrypted message can't be guaranteed on this device */
     .mx_EventTile_e2eIcon.mx_EventTile_e2eIcon_normal::before {
         content: '!';
+        background-color: orange;
+    }
+
+    /* Unable to decrypt */
+    .mx_EventTile_e2eIcon.mx_EventTile_e2eIcon_warning::before {
+        content: '!!';
         background-color: red;
     }
 }
