@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2022.10.03
+@version        2022.12.01
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -97,7 +97,8 @@ url-prefix("https://element.") {
     }
 
     /* show full mxid of users involved in summarized events */
-    .mx_GenericEventListSummary_avatars .mx_BaseAvatar_image {
+    .mx_GenericEventListSummary_avatars .mx_BaseAvatar_image,
+    .mx_ReplyTile .mx_BaseAvatar_image {
         width: initial !important;
         height: initial !important;
         font-size: xx-small;
