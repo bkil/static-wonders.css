@@ -1,0 +1,39 @@
+/* ==UserStyle==
+@name           Element reply chain
+@namespace      bkil.hu
+@version        2023.02.01
+@description    Condense reply chain to a single line
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("app.element.io"),
+url-prefix("https://riot."),
+url-prefix("https://matrix."),
+url-prefix("https://element.") {
+    /* collapse the whole reply change to a single inline line */
+    .mx_ReplyChain_wrapper,
+    .mx_ReplyChain_wrapper div,
+    .mx_ReplyChain_wrapper p,
+    .mx_ReplyChain_wrapper ul,
+    .mx_ReplyChain_wrapper ol,
+    .mx_ReplyChain_wrapper li,
+    .mx_ReplyChain_wrapper blockquote,
+    .mx_ReplyTile>a,
+    .mx_ReplyTile .mx_ReplyTile_sender,
+    .mx_EventTile .mx_DisambiguatedProfile,
+    .mx_ReplyTile .mx_EventTile_content,
+    .mx_IRCLayout .mx_EventTile .mx_EventTile_line .mx_ReplyTile .mx_MTextBody,
+    .mx_ReplyTile .mx_ReplyTile_sender .mx_DisambiguatedProfile {
+      display: inline;
+    }
+
+    /* a little space between the username and the text */
+    .mx_ReplyChain_wrapper .mx_EventTile_body,
+    .mx_ReplyChain_wrapper .mx_EventTile .mx_EventTile_body {
+      padding-left: 1em;
+    }
+
+    /* a little space before the cite line */
+    .mx_ReplyChain_wrapper {
+      padding-left: 1em;
+    }
+}
