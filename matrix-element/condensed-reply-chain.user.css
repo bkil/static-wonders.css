@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.03
+@version        2023.02.04
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -52,7 +52,7 @@ url-prefix("https://element.") {
     }
 
     /* make non-markdown flow in a single line */
-    .mx_MTextBody {
+    .mx_ReplyChain_wrapper .mx_MTextBody {
       white-space: nowrap;
     }
 
