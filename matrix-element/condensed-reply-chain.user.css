@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.01
+@version        2023.02.02
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -10,12 +10,12 @@ url-prefix("https://riot."),
 url-prefix("https://matrix."),
 url-prefix("https://element.") {
     /* collapse the whole reply change to a single inline line */
-    .mx_ReplyChain_wrapper,
     .mx_ReplyChain_wrapper div,
     .mx_ReplyChain_wrapper p,
     .mx_ReplyChain_wrapper ul,
     .mx_ReplyChain_wrapper ol,
     .mx_ReplyChain_wrapper li,
+    .mx_ReplyChain_wrapper a,
     .mx_ReplyChain_wrapper blockquote,
     .mx_ReplyTile>a,
     .mx_ReplyTile .mx_ReplyTile_sender,
@@ -26,12 +26,21 @@ url-prefix("https://element.") {
       display: inline;
     }
 
-    /* a little space between the username and the text */
-    .mx_ReplyChain_wrapper .mx_EventTile_body,
-    .mx_ReplyChain_wrapper .mx_EventTile .mx_EventTile_body {
-      padding-left: 1em;
+    .mx_ReplyChain_wrapper blockquote,
+    .mx_ReplyChain_wrapper p,
+    .mx_ReplyChain_wrapper ol,
+    .mx_ReplyChain_wrapper .mx_EventTile_content .markdown-body>ul {
+        margin-block-start: initial;
+        margin-block-end: initial;
+        margin-inline-start: initial;
+        margin-inline-end: initial;
+        padding-inline-start: initial;
+        list-style-type: none;
     }
 
+    /* a little space between the username and the text */
+    .mx_ReplyChain_wrapper .mx_EventTile_body,
+    .mx_ReplyChain_wrapper .mx_EventTile .mx_EventTile_body,
     /* a little space before the cite line */
     .mx_ReplyChain_wrapper {
       padding-left: 1em;
