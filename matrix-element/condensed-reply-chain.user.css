@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.02
+@version        2023.02.03
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -28,7 +28,7 @@ url-prefix("https://element.") {
 
     .mx_ReplyChain_wrapper blockquote,
     .mx_ReplyChain_wrapper p,
-    .mx_ReplyChain_wrapper ol,
+    .mx_ReplyChain_wrapper .mx_EventTile_content .markdown-body>ol,
     .mx_ReplyChain_wrapper .mx_EventTile_content .markdown-body>ul {
         margin-block-start: initial;
         margin-block-end: initial;
@@ -44,5 +44,40 @@ url-prefix("https://element.") {
     /* a little space before the cite line */
     .mx_ReplyChain_wrapper {
       padding-left: 1em;
+    }
+
+    /* make markdown flow in a single line */
+    .mx_ReplyChain_wrapper .mx_EventTile_content .markdown-body {
+      white-space: nowrap !important; /* !important in original */
+    }
+
+    /* make non-markdown flow in a single line */
+    .mx_MTextBody {
+      white-space: nowrap;
+    }
+
+    /* cut reply chain after first line */
+    .mx_ReplyChain_wrapper {
+      /* added padding of .mx_ReplyTile */
+      max-height: calc(1em + 4px);
+      overflow: hidden;
+      margin-bottom: 0.5em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* expand reply chain on hover */
+    .mx_ReplyChain_wrapper:hover {
+      max-height: initial;
+    }
+
+    /* reflow body on hover */
+    .mx_ReplyChain_wrapper:hover .mx_EventTile_content .markdown-body {
+      /* !important in original */
+      white-space: initial !important;
+    }
+
+    .mx_ReplyChain_wrapper:hover .mx_MTextBody {
+      white-space: initial;
     }
 }
