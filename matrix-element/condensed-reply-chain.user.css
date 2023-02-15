@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.04
+@version        2023.02.05
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -64,6 +64,11 @@ url-prefix("https://element.") {
       margin-bottom: 0.5em;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    /* restore emoji height so it won't push over text */
+    .mx_EventTile .mx_ReplyChain_wrapper .mx_Emoji {
+      font-size: initial;
     }
 
     /* expand reply chain on hover */
