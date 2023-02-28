@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.05
+@version        2023.02.16
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -16,6 +16,13 @@ url-prefix("https://element.") {
     .mx_ReplyChain_wrapper ol,
     .mx_ReplyChain_wrapper li,
     .mx_ReplyChain_wrapper a,
+    .mx_ReplyChain_wrapper h1,
+    .mx_ReplyChain_wrapper h2,
+    .mx_ReplyChain_wrapper h3,
+    .mx_ReplyChain_wrapper h4,
+    .mx_ReplyChain_wrapper h5,
+    .mx_ReplyChain_wrapper h6,
+    .mx_ReplyChain_wrapper span,
     .mx_ReplyChain_wrapper blockquote,
     .mx_ReplyTile>a,
     .mx_ReplyTile .mx_ReplyTile_sender,
@@ -24,6 +31,10 @@ url-prefix("https://element.") {
     .mx_IRCLayout .mx_EventTile .mx_EventTile_line .mx_ReplyTile .mx_MTextBody,
     .mx_ReplyTile .mx_ReplyTile_sender .mx_DisambiguatedProfile {
       display: inline;
+    }
+
+    .mx_ReplyChain_wrapper br {
+      display: none;
     }
 
     .mx_ReplyChain_wrapper blockquote,
