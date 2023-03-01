@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element bugfix
 @namespace      bkil.hu
-@version        2022.07.09
+@version        2023.02.01
 @description    Fixes to UX bugs
 @author         bkil
 ==/UserStyle== */
@@ -61,5 +61,13 @@ url-prefix("https://element.") {
     .mx_RoomSublist .mx_RoomSublist_resizeBox,
     .mx_RoomSublist .mx_RoomSublist_resizeBox .mx_RoomSublist_tiles {
         display: initial;
+    }
+
+    /* disable clicking internal links within room topic */
+    /* https://github.com/vector-im/element-web/issues/23395 */
+    .mx_RoomTopic a.linkified:not([target="_blank"]):not(.mx_Pill) {
+      pointer-events: none;
+      cursor: default;
+      text-decoration: line-through;
     }
 }
