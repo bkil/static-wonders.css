@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misclick
 @namespace      bkil.hu
-@version        2022.07.25
+@version        2023.02.01
 @description    Disable rarely needed buttons
 @author         bkil
 ==/UserStyle== */
@@ -54,5 +54,22 @@ url-prefix("https://element.") {
     /* hide preset power values */
     .mx_PowerSelector option:not([value="SELECT_VALUE_CUSTOM"]) {
         display: none;
+    }
+
+    /* disable opening of external links */
+    a.linkified:not([href^="https://matrix.to/"]):not([href^="https://github.com/"]) {
+      pointer-events: none;
+    }
+
+    a.linkified:not([href^="https://matrix.to/"]):not([href^="https://github.com/"]),
+    a:not(.linkified):not([href^="https://matrix.to/"]):not([href^="https://github.com/"]) {
+      cursor: default;
+      text-decoration: line-through;
+    }
+
+    a:not(.linkified):not([href^="https://matrix.to/"]):not([href^="https://github.com/"])::after {
+      margin-left: 1em;
+      font-style: italic;
+      content: attr(href);
     }
 }
