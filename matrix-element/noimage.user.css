@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2023.02.01
+@version        2023.02.11
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -343,5 +343,63 @@ url-prefix("https://element.") {
     .mx_EventTile_e2eIcon.mx_EventTile_e2eIcon_warning::before {
         content: '!!';
         background-color: red;
+    }
+
+    /* replace icons with text */
+    .mx_RoomSummaryCard .mx_BaseCard_header .mx_RoomSummaryCard_avatar .mx_RoomSummaryCard_e2ee::before,
+    .mx_RoomSummaryCard .mx_BaseCard_header .mx_RoomSummaryCard_avatar .mx_RoomSummaryCard_e2ee_normal::before,
+    .mx_E2EIcon_normal::after, .mx_E2EIcon_normal::before,
+    .mx_E2EIcon_verified::after, .mx_E2EIcon_verified::before,
+    .mx_E2EIcon_warning::after, .mx_E2EIcon_warning::before,
+    .mx_DecoratedRoomAvatar .mx_DecoratedRoomAvatar_icon_globe::before,
+    .mx_ExtraTile .mx_DecoratedRoomAvatar_icon_globe::before {
+      font-size: xx-small;
+      width: initial;
+      background-color: initial;
+      mask: initial;
+      -webkit-mask: initial;
+      position: initial;
+    }
+
+    .mx_RoomHeader .mx_RoomHeader_icon {
+      width: initial;
+    }
+
+    /* above room name on right panel: non-E2EE room by default */
+    .mx_RoomSummaryCard .mx_BaseCard_header .mx_RoomSummaryCard_avatar .mx_RoomSummaryCard_e2ee::before {
+      content: 'cleartext';
+    }
+
+    /* above room name on right panel: E2EE room */
+    .mx_RoomSummaryCard .mx_BaseCard_header .mx_RoomSummaryCard_avatar .mx_RoomSummaryCard_e2ee_normal::before {
+      content: 'E2EE';
+    }
+
+    /* on top next to room topic: E2EE */
+    .mx_E2EIcon_normal::before {
+      content: 'E2EE';
+    }
+
+    /* on top next to room topic: E2EE, everybody verified */
+    .mx_E2EIcon_verified::before {
+      content: 'E2EE verified';
+    }
+
+    /* on top next to room topic: E2EE, not everybody verified */
+    .mx_E2EIcon_warning::before {
+      content: 'E2EE unverified';
+    }
+
+    /* on top next to room topic: publicly joinable rooms */
+    .mx_RoomHeader_avatar .mx_DecoratedRoomAvatar .mx_DecoratedRoomAvatar_icon,
+    .mx_RoomHeader_avatar .mx_ExtraTile .mx_DecoratedRoomAvatar_icon {
+      position: initial;
+      width: initial;
+      margin: initial;
+    }
+
+    .mx_RoomHeader_avatar .mx_DecoratedRoomAvatar .mx_DecoratedRoomAvatar_icon_globe::before,
+    .mx_RoomHeader_avatar .mx_ExtraTile .mx_DecoratedRoomAvatar_icon_globe::before {
+      content: 'public';
     }
 }
