@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.16
+@version        2023.02.17
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -23,7 +23,7 @@ url-prefix("https://element.") {
     .mx_ReplyChain_wrapper h5,
     .mx_ReplyChain_wrapper h6,
     .mx_ReplyChain_wrapper span,
-    .mx_ReplyChain_wrapper blockquote,
+    .mx_ReplyChain_wrapper:not(:hover) blockquote,
     .mx_ReplyTile>a,
     .mx_ReplyTile .mx_ReplyTile_sender,
     .mx_EventTile .mx_DisambiguatedProfile,
