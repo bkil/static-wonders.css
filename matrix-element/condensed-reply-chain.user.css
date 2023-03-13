@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.02.17
+@version        2023.03.01
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -23,6 +23,7 @@ url-prefix("https://element.") {
     .mx_ReplyChain_wrapper h5,
     .mx_ReplyChain_wrapper h6,
     .mx_ReplyChain_wrapper span,
+    .mx_ReplyChain_wrapper:not(:hover) .mx_ReplyTile .mx_EventTile_content .mx_EventTile_pre_container>pre,
     .mx_ReplyChain_wrapper:not(:hover) blockquote,
     .mx_ReplyTile>a,
     .mx_ReplyTile .mx_ReplyTile_sender,
@@ -41,12 +42,12 @@ url-prefix("https://element.") {
     .mx_ReplyChain_wrapper p,
     .mx_ReplyChain_wrapper .mx_EventTile_content .markdown-body>ol,
     .mx_ReplyChain_wrapper .mx_EventTile_content .markdown-body>ul {
-        margin-block-start: initial;
-        margin-block-end: initial;
-        margin-inline-start: initial;
-        margin-inline-end: initial;
-        padding-inline-start: initial;
-        list-style-type: none;
+      margin-block-start: initial;
+      margin-block-end: initial;
+      margin-inline-start: initial;
+      margin-inline-end: initial;
+      padding-inline-start: initial;
+      list-style-type: none;
     }
 
     /* a little space between the username and the text */
@@ -55,6 +56,12 @@ url-prefix("https://element.") {
     /* a little space before the cite line */
     .mx_ReplyChain_wrapper {
       padding-left: 1em;
+    }
+
+    /* make pre code snippets flow in a single line */
+    .mx_ReplyChain_wrapper:not(:hover) .mx_EventTile_content .markdown-body pre code,
+    .mx_ReplyChain_wrapper:not(:hover) .mx_EventTile_content .markdown-body code {
+      white-space: initial;
     }
 
     /* make markdown flow in a single line */
