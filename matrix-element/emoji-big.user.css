@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element emoji big
 @namespace      bkil.hu
-@version        2022.07.15
+@version        2023.03.01
 @description    Make emoji bigger and the line resize less on hover resize the content less
 @author         bkil
 ==/UserStyle== */
@@ -9,6 +9,8 @@
 url-prefix("https://riot."), url-prefix("https://matrix."), url-prefix("https://element.") {
     /* make inline emoji bigger */
     .mx_EventTile .mx_Emoji,
+    /* make emoji-only message bigger */
+    .mx_EventTile .mx_UnknownBody,
     /* make reaction emoji bigger */
     .mx_EventTile .mx_ReactionsRowButton_content {
         font-size: xx-large;
