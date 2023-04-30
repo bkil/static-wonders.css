@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misc improvements
 @namespace      bkil.hu
-@version        2023.04.01
+@version        2023.04.10
 @description    Some are subjective and my not always apply
 @author         bkil
 ==/UserStyle== */
@@ -56,7 +56,7 @@ url-prefix("https://element.") {
     }
 
     /* make relay bot username more readable */
-    .markdown-body b:first-child {
+    .markdown-body > b:first-child {
       font-family: "OCRABold", "OCRA", monospace;
     }
 }
