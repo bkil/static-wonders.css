@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           hup.hu noCookie, noImages, tweaks
 @namespace      bkil.hu
-@version        2022.08.01
+@version        2023.05.01
 @description    Remove cookie and signup nagging banners. Make it usable with images disabled. Reduce clutter on interface by removing redundant edges. Tested both when logged in and when browsing as anonymous.
 @author         bkil
 ==/UserStyle== */
@@ -147,6 +147,14 @@
 
     .edited:not(:hover) {
         opacity: 0.3;
+    }
+
+    /* remove horizontal scroll of blocks */
+    pre {
+      padding-left: 1em;
+      margin-left: 1em;
+      border-left: 1px solid;
+      white-space: pre-wrap;
     }
 
     /* substitute text for editor widget icons when images are disabled */
