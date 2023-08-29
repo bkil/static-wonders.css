@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element misclick
 @namespace      bkil.hu
-@version        2023.02.03
+@version        2023.08.01
 @description    Disable rarely needed buttons
 @author         bkil
 ==/UserStyle== */
@@ -11,7 +11,9 @@ url-prefix("https://matrix."),
 url-prefix("https://element.") {
     /* Make some rarely pressed buttons inactive */
     .mx_RoomHeader_voiceCallButton,
+    .mx_LegacyRoomHeader_voiceCallButton,
     .mx_RoomHeader_videoCallButton,
+    .mx_LegacyRoomHeader_videoCallButton,
     .mx_RightPanel_notifsButton,
     .mx_MessageActionBar_downloadButton,
     .mx_MessageActionBar_threadButton,
