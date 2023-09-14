@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element no images
 @namespace      bkil.hu
-@version        2023.02.11
+@version        2023.09.01
 @description    Show captions after you disable images and fonts within your browser. TODO: a few things still overlap
 @author         bkil
 ==/UserStyle== */
@@ -68,8 +68,13 @@ url-prefix("https://element.") {
     /* hide user avatar */
     .mx_BaseAvatar.mx_BaseAvatar_image,
     /* hide default avatar */
-    .mx_BaseAvatar .mx_BaseAvatar_image {
+    .mx_BaseAvatar .mx_BaseAvatar_image,
+    .mx_BaseAvatar img,
+    /* hide avatar character */
+    .mx_EventTile_avatar > button {
         visibility: hidden;
+        width: 0;
+        height: 0;
     }
 
     /* place the display name first */
@@ -155,7 +160,8 @@ url-prefix("https://element.") {
 
     /* show mxid instead of avatar */
     .mx_IRCLayout .mx_EventTile .mx_EventTile_avatar .mx_BaseAvatar_image::before,
-    .mx_RoomView_body .mx_BaseAvatar_image[title]::before {
+    .mx_RoomView_body .mx_BaseAvatar_image[title]::before,
+    .mx_RoomView_body .mx_EventTile_avatar button[title]::before {
         visibility: visible;
         content: attr(title);
     }
@@ -163,6 +169,17 @@ url-prefix("https://element.") {
     .mx_IRCLayout .mx_EventTile .mx_EventTile_avatar .mx_BaseAvatar_image,
     .mx_EventTile_avatar .mx_BaseAvatar_image {
         width: initial !important;
+    }
+
+    .mx_EventTile_avatar button[title] {
+      width: initial;
+      height: initial;
+      border-radius: initial;
+      aspect-ratio: initial;
+      font-weight: initial;
+      text-transform: initial;
+      line-height: initial;
+      background-color: initial;
     }
 
     .mx_MemberList_wrapper .mx_EntityTile[title]::after {
