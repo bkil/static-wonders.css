@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element bugfix
 @namespace      bkil.hu
-@version        2023.02.01
+@version        2023.11.01
 @description    Fixes to UX bugs
 @author         bkil
 ==/UserStyle== */
@@ -69,5 +69,24 @@ url-prefix("https://element.") {
       pointer-events: none;
       cursor: default;
       text-decoration: line-through;
+    }
+
+    /* widen horizontal resizer edge between room drawer and chat */
+    .mx_ResizeHandle.mx_ResizeHandle--horizontal>div {
+        width: 0;
+    }
+
+    .mx_MatrixChat>.mx_ResizeHandle.mx_ResizeHandle--horizontal {
+        padding: initial;
+        margin-left: 2px;
+        padding-right: 10px;
+    }
+
+    .mx_LeftPanel .mx_LeftPanel_roomListContainer .mx_LeftPanel_roomListWrapper {
+        padding-right: initial;
+    }
+
+    ::-webkit-scrollbar {
+        width: 9px;
     }
 }
