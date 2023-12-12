@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Element reply chain
 @namespace      bkil.hu
-@version        2023.03.01
+@version        2023.12.01
 @description    Condense reply chain to a single line
 @author         bkil
 ==/UserStyle== */
@@ -61,7 +61,7 @@ url-prefix("https://element.") {
     /* make pre code snippets flow in a single line */
     .mx_ReplyChain_wrapper:not(:hover) .mx_EventTile_content .markdown-body pre code,
     .mx_ReplyChain_wrapper:not(:hover) .mx_EventTile_content .markdown-body code {
-      white-space: initial;
+      white-space: nowrap;
     }
 
     /* make markdown flow in a single line */
@@ -102,5 +102,10 @@ url-prefix("https://element.") {
 
     .mx_ReplyChain_wrapper:hover .mx_MTextBody {
       white-space: initial;
+    }
+
+    /* adjust position of hovering reactions bar so doesn't flick that much when expanding threads */
+    .mx_MessageActionBar {
+      top: -40px;
     }
 }
