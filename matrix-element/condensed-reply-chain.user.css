@@ -106,6 +106,7 @@ url-prefix("https://element.") {
 
     /* adjust position of hovering reactions bar so doesn't flick that much when expanding threads */
     .mx_MessageActionBar {
-      top: -40px;
+      bottom: -32px;
+      top: initial;
     }
 }
