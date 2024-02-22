@@ -1,0 +1,30 @@
+/* ==UserStyle==
+@name           Cinny misc
+@namespace      bkil.hu
+@version        2024.2.1
+@description    Fixes to UX
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("cinny.envs.net"), domain("app.cinny.in") {
+    /* make dialogs full width */
+    .raw-modal {
+        --small-modal-width: initial;
+        --medium-modal-width: initial;
+        --large-modal-width: initial;
+    }
+
+    /* place checkbox close to the text */
+    .raw-modal .room-selector__content {
+      flex: initial;
+    }
+
+    /* make italic font work */
+    i, em {
+      font-family: emoji, sans-serif;
+    }
+
+    /* highlight message that actions will influence */
+    .room-view__scrollable [data-message-item] > div:first-child:hover + div {
+      outline: auto
+    }
+}
