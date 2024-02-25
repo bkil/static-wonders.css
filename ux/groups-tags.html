@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <title>Tags vs. categories tree diagram experiment</title>
+  <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
+  <meta property='og:description' content='Experiment to remake an infographic in accessible HTML & CSS' name='description'>
+  <meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html {
+  background-color: black;
+  color: white;
+}
+ul {
+  display: inline-block;
+  list-style: none;
+  vertical-align: top;
+  padding-bottom: 0.5em;
+}
+li {
+  color: orange;
+  padding-inline-start: 2em;
+  border-left: 1px solid blue;
+  border-top: 1px solid blue;
+  padding-bottom: 0.5em;
+}
+li:last-child {
+  border-left: none;
+  border-bottom: none;
+}
+.orphan {
+  border-top: none;
+  padding-bottom: 1em;
+}
+</style>
+</head>
+<body>
+<h1>Groups vs. Tags</h1>
+
+<h2 id=groups>Groups</h2>
+
+Each node corresponds to an exclusive category:
+
+<div role=img><ul>
+ <li>A1<ul>
+  <li>B1<ul>
+   <li>C1
+   <li>C2
+   <li>C3
+  </ul>
+  <li>B2
+  <li>B3<ul>
+   <li>C4
+   <li>C5
+  </ul>
+ </ul>
+</ul></div>
+
+<h2 id=tags>Tags</h2>
+
+Each node corresponds to a set of tags:
+
+<div role=img><ul>
+ <li>A, C, E<ul>
+  <li>A<ul>
+   <li>A, D
+   <li>A, D
+   <li>A, D
+  </ul>
+  <li class=orphan>B
+  <li>C
+ </ul>
+</ul></div>
+
+</body>
+</html>
