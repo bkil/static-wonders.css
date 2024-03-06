@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           hup.hu noCookie, noImages, tweaks
 @namespace      bkil.hu
-@version        2023.05.01
+@version        2024.03.01
 @description    Remove cookie and signup nagging banners. Make it usable with images disabled. Reduce clutter on interface by removing redundant edges. Tested both when logged in and when browsing as anonymous.
 @author         bkil
 ==/UserStyle== */
@@ -115,6 +115,11 @@
         margin-bottom: 0.5rem;
     }
 
+    /* highlight target of link anchor hash */
+    #block-hup-theme-content article.comment:target {
+      border-left: 1px solid;
+    }
+
     /* hide login nagging above each comment */
     ul li.comment-forbidden {
         display: none;
@@ -141,7 +146,10 @@
     }
 
     /* fade top right comment links when not hovered */
-    .comment_links > a:not(:hover) {
+    .parent-permalink:not(:hover) {
+        opacity: 0.6;
+    }
+    .comment_links > a:not(.parent-permalink):not(:hover) {
         opacity: 0.3;
     }
 
