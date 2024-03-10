@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <title>OSM business card with color scale edges</title>
+  <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
+  <meta property='og:description' content='Printable A4 business card template with QR code, user URL' name='description'>
+  <meta name=viewport content='width=device-width, initial-scale=1'>
+  <meta name=referrer content=no-referrer>
+<style>
+@media all {
+  .page {
+    width: 297mm;
+    height: calc(209mm - 5mm);
+  }
+}
+
+@media print {
+  .page {
+    width: initial;
+    height: calc(100% - 5mm);
+  }
+}
+
+html, body, .flex {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.page {
+  padding-top: 5mm;
+}
+
+.page:not(:last-of-type) {
+  break-after: page;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  overflow: hidden;
+}
+
+.card {
+  width: 90mm;
+  height: 50mm;
+  position: relative;
+}
+
+.page {
+  line-height: 3mm;
+}
+
+.scale span,
+.top div,
+.bot div,
+.left div,
+.right div {
+  display: inline-block;
+  width: 5mm;
+  text-align: center;
+  font-size: 2.5mm;
+}
+
+.scale span {
+  padding-top: 1mm;
+}
+
+.card:not(.row) .top div,
+.card.row .bot div {
+  height: 4.3mm;
+}
+
+.card:not(.row) .bot div,
+.card.row .top div,
+.left div,
+.right div {
+  height: 5.3mm;
+}
+
+.top div:after,
+.bot div:after,
+.left div:after,
+.right div:after {
+  padding-top: 1mm;
+  width: 5.3mm;
+  display: block;
+  height: 100%;
+}
+
+.card > div {
+  position: absolute;
+  display: inline-block;
+}
+
+.in {
+  top: 10mm;
+  left: 5mm;
+  width: 80mm;
+  height: 35mm;
+  overflow: hidden;
+  line-height: 5mm;
+  font-size: 4mm;
+}
+
+.front .pad {
+  padding: 3mm;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.back .pad {
+  padding-left: 1mm;
+}
+
+.back .in {
+  top: 5mm;
+  height: 40mm;
+}
+
+.scale {
+  top: 5mm;
+  left: 5mm;
+}
+
+.top, .bot {
+  width: 93mm;
+}
+
+.left, .right {
+  top: 5mm;
+}
+
+.left > div, .right > div {
+  transform: rotate(90deg);
+}
+
+.card:not(.row) .top,
+.card.row .bot {
+  top: 0;
+}
+
+.card:not(.row) .bot,
+.card.row .top {
+  bottom: 0;
+}
+
+.card.col .top,
+.card.col .bot {
+  transform: rotate(180deg);
+  margin-left: -3mm;
+}
+
+.card.col .top > div,
+.card.col .bot > div {
+  transform: rotate(-180deg);
+}
+
+.card:not(.col) .left,
+.card.col .right {
+  left: 0;
+  transform: rotate(-90deg) translate(-17.5mm, -17.5mm);
+}
+
+.card:not(.col) .right,
+.card.col .left {
+  right: 0;
+  transform: rotate(-90deg) translate(-17.5mm, 17.5mm);
+}
+
+.icon {
+  text-align: right;
+}
+
+.name {
+  cursor: crosshair;
+  text-decoration: underline;
+}
+
+.url {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.gray {
+  filter: grayscale();
+}
+
+img {
+  float: right;
+  width: 2cm;
+  margin-top: 5mm;
+  margin-right: 5mm;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  filter: invert() sepia() saturate(19) hue-rotate(190deg) invert();
+}
+
+.card:not(:first-of-type) .tactile {
+  display: none;
+}
+
+.card:first-of-type .tactile {
+  color: #ced;
+  font-size: 11mm;
+  line-height: 14mm;
+  top: 5mm;
+  right: 5mm;
+  transform: rotateY(180deg);
+  position: absolute;
+}
+
+.front .top div:nth-child(1 ):after { background-color: #750; content: '750' }
+.front .top div:nth-child(2 ):after { background-color: #751; content: '751' }
+.front .top div:nth-child(3 ):after { background-color: #752; content: '752' }
+.front .top div:nth-child(4 ):after { background-color: #753; content: '753' }
+.front .top div:nth-child(5 ):after { background-color: #754; content: '754' }
+.front .top div:nth-child(6 ):after { background-color: #755; content: '755' }
+.front .top div:nth-child(7 ):after { background-color: #756; content: '756' }
+.front .top div:nth-child(8 ):after { background-color: #757; content: '757' }
+.front .top div:nth-child(9 ):after { background-color: #758; content: '758' }
+.front .top div:nth-child(10):after { background-color: #760; content: '760' }
+.front .top div:nth-child(11):after { background-color: #761; content: '761' }
+.front .top div:nth-child(12):after { background-color: #762; content: '762' }
+.front .top div:nth-child(13):after { background-color: #763; content: '763' }
+.front .top div:nth-child(14):after { background-color: #764; content: '764' }
+.front .top div:nth-child(15):after { background-color: #765; content: '765' }
+.front .top div:nth-child(16):after { background-color: #766; content: '766' }
+.front .top div:nth-child(17):after { background-color: #767; content: '767' }
+.front .top div:nth-child(18):after { background-color: #768; content: '768' }
+.front .bot div:nth-child(1 ):after { background-color: #350; content: '350' }
+.front .bot div:nth-child(2 ):after { background-color: #351; content: '351' }
+.front .bot div:nth-child(3 ):after { background-color: #352; content: '352' }
+.front .bot div:nth-child(4 ):after { background-color: #353; content: '353' }
+.front .bot div:nth-child(5 ):after { background-color: #354; content: '354' }
+.front .bot div:nth-child(6 ):after { background-color: #355; content: '355' }
+.front .bot div:nth-child(7 ):after { background-color: #356; content: '356' }
+.front .bot div:nth-child(8 ):after { background-color: #357; content: '357' }
+.front .bot div:nth-child(9 ):after { background-color: #358; content: '358' }
+.front .bot div:nth-child(10):after { background-color: #360; content: '360' }
+.front .bot div:nth-child(11):after { background-color: #361; content: '361' }
+.front .bot div:nth-child(12):after { background-color: #362; content: '362' }
+.front .bot div:nth-child(13):after { background-color: #363; content: '363' }
+.front .bot div:nth-child(14):after { background-color: #364; content: '364' }
+.front .bot div:nth-child(15):after { background-color: #365; content: '365' }
+.front .bot div:nth-child(16):after { background-color: #366; content: '366' }
+.front .bot div:nth-child(17):after { background-color: #367; content: '367' }
+.front .bot div:nth-child(18):after { background-color: #368; content: '368' }
+.front .left div:nth-child(1 ):after { background-color: #a50; content: 'a50' }
+.front .left div:nth-child(2 ):after { background-color: #a51; content: 'a61' }
+.front .left div:nth-child(3 ):after { background-color: #a52; content: 'a52' }
+.front .left div:nth-child(4 ):after { background-color: #a53; content: 'a63' }
+.front .left div:nth-child(5 ):after { background-color: #a60; content: 'a50' }
+.front .left div:nth-child(6 ):after { background-color: #a61; content: 'a61' }
+.front .left div:nth-child(7 ):after { background-color: #a62; content: 'a52' }
+.front .left div:nth-child(8 ):after { background-color: #a63; content: 'a63' }
+.front .right div:nth-child(1 ):after { background-color: #e50; content: 'e50' }
+.front .right div:nth-child(2 ):after { background-color: #e51; content: 'e51' }
+.front .right div:nth-child(3 ):after { background-color: #e52; content: 'e52' }
+.front .right div:nth-child(4 ):after { background-color: #e53; content: 'e53' }
+.front .right div:nth-child(5 ):after { background-color: #e60; content: 'e60' }
+.front .right div:nth-child(6 ):after { background-color: #e61; content: 'e61' }
+.front .right div:nth-child(7 ):after { background-color: #e62; content: 'e52' }
+.front .right div:nth-child(8 ):after { background-color: #e63; content: 'e63' }
+.back .top div:nth-child(1 ):after { background-color: #7e0; content: '7e0' }
+.back .top div:nth-child(2 ):after { background-color: #7e1; content: '7e1' }
+.back .top div:nth-child(3 ):after { background-color: #7e2; content: '7e2' }
+.back .top div:nth-child(4 ):after { background-color: #7e3; content: '7e3' }
+.back .top div:nth-child(5 ):after { background-color: #7e4; content: '7e4' }
+.back .top div:nth-child(6 ):after { background-color: #7e5; content: '7e5' }
+.back .top div:nth-child(7 ):after { background-color: #7e6; content: '7e6' }
+.back .top div:nth-child(8 ):after { background-color: #7e7; content: '7e7' }
+.back .top div:nth-child(9 ):after { background-color: #7e8; content: '7e8' }
+.back .top div:nth-child(10):after { background-color: #7f0; content: '7f0' }
+.back .top div:nth-child(11):after { background-color: #7f1; content: '7f1' }
+.back .top div:nth-child(12):after { background-color: #7f2; content: '7f2' }
+.back .top div:nth-child(13):after { background-color: #7f3; content: '7f3' }
+.back .top div:nth-child(14):after { background-color: #7f4; content: '7f4' }
+.back .top div:nth-child(15):after { background-color: #7f5; content: '7f5' }
+.back .top div:nth-child(16):after { background-color: #7f6; content: '7f6' }
+.back .top div:nth-child(17):after { background-color: #7f7; content: '7f7' }
+.back .top div:nth-child(18):after { background-color: #7f8; content: '7f8' }
+.back .bot div:nth-child(1 ):after { background-color: #3e0; content: '3e0' }
+.back .bot div:nth-child(2 ):after { background-color: #3e1; content: '3e1' }
+.back .bot div:nth-child(3 ):after { background-color: #3e2; content: '3e2' }
+.back .bot div:nth-child(4 ):after { background-color: #3e3; content: '3e3' }
+.back .bot div:nth-child(5 ):after { background-color: #3e4; content: '3e4' }
+.back .bot div:nth-child(6 ):after { background-color: #3e5; content: '3e5' }
+.back .bot div:nth-child(7 ):after { background-color: #3e6; content: '3e6' }
+.back .bot div:nth-child(8 ):after { background-color: #3e7; content: '3e7' }
+.back .bot div:nth-child(9 ):after { background-color: #3e8; content: '3e8' }
+.back .bot div:nth-child(10):after { background-color: #3f0; content: '3f0' }
+.back .bot div:nth-child(11):after { background-color: #3f1; content: '3f1' }
+.back .bot div:nth-child(12):after { background-color: #3f2; content: '3f2' }
+.back .bot div:nth-child(13):after { background-color: #3f3; content: '3f3' }
+.back .bot div:nth-child(14):after { background-color: #3f4; content: '3f4' }
+.back .bot div:nth-child(15):after { background-color: #3f5; content: '3f5' }
+.back .bot div:nth-child(16):after { background-color: #3f6; content: '3f6' }
+.back .bot div:nth-child(17):after { background-color: #3f7; content: '3f7' }
+.back .bot div:nth-child(18):after { background-color: #3f8; content: '3f8' }
+.back .left div:nth-child(1 ):after { background-color: #ae0; content: 'ae0' }
+.back .left div:nth-child(2 ):after { background-color: #ae1; content: 'ae1' }
+.back .left div:nth-child(3 ):after { background-color: #ae2; content: 'ae2' }
+.back .left div:nth-child(4 ):after { background-color: #ae3; content: 'ae3' }
+.back .left div:nth-child(5 ):after { background-color: #af0; content: 'af0' }
+.back .left div:nth-child(6 ):after { background-color: #af1; content: 'af1' }
+.back .left div:nth-child(7 ):after { background-color: #af2; content: 'af2' }
+.back .left div:nth-child(8 ):after { background-color: #af3; content: 'af3' }
+.back .right div:nth-child(1 ):after { background-color: #ee0; content: 'ee0' }
+.back .right div:nth-child(2 ):after { background-color: #ee1; content: 'ee1' }
+.back .right div:nth-child(3 ):after { background-color: #ee2; content: 'ee2' }
+.back .right div:nth-child(4 ):after { background-color: #ee3; content: 'ee3' }
+.back .right div:nth-child(5 ):after { background-color: #ef0; content: 'ef0' }
+.back .right div:nth-child(6 ):after { background-color: #ef1; content: 'ef1' }
+.back .right div:nth-child(7 ):after { background-color: #ef2; content: 'ef2' }
+.back .right div:nth-child(8 ):after { background-color: #ef3; content: 'ef3' }
+
+</style>
+</head>
+<body>
+
+<div class=page>
+ <div class=flex>
+  <div class='card front'>
+   <div class=left><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=right><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=top><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=bot><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=scale><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span><span>35</span><span>40</span><span>45</span><span>50</span><span>55</span><span>60</span><span>65</span><span>70</span><span>75</span><span>80</span></div>
+   <div class=in>
+    <div class=tactile>⠃⠅⠊⠇⠄⠓⠥<br>⠐⠂⠕⠎⠍</div>
+    <div class=pad>
+     <div><b>OpenStreetMap</b> - Közösségi világtérkép és navigáció 2004 óta</div>
+     <div class=icon>🇭🇺 🔎 🌐</div>
+     <div><i>Helyi önkéntes szerkesztő:</i></div>
+     <div>osm.org/user/<span class=name contenteditable>bkil</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class=page>
+ <div class=flex>
+  <div class='card back'>
+   <div class=left><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=right><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=top><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=bot><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class=in>
+    <div class=pad>
+     <img
+src='data:image/gif;base64,R0lGODdhGQAZAJAAAAAAAP///ywAAAAAGQAZAAACcIQPcZrKaIKUrS432XOpUh6FYfaNi9hRnbeuZGp+GXRyNt2Qcq3b6gZkeUoaFsaCKNJurhzk+LOoIswUFEqlTmAoZC3rzG232qRWs8H9epfkFBfLMjFjJRqNoose8hb9aBWYxhcWeAZIOJTYNfVnUAAAOw=='
+     >Független, védi a privát szférát.
+Hétköznapi hősök folyamatosan frissítik.
+Részletgazdag turistautak, tömegközlekedés és közérdekű tárgyak.
+Mobilnet nélkül is.
+Akadálymentes.
+Használd, javítsd:
+     <span class=gray>🤖&nbsp;🍎</span>&nbsp;<span class=url>wiki.osm.org/Hungary/hi</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function() {
+'use strict';
+
+function init() {
+  var i, j, flex, card, clone, span;
+  var page = document.getElementsByClassName('page');
+  for (i = 0; i < page.length; i++) {
+    flex = page[i].getElementsByClassName('flex')[0];
+    card = flex.getElementsByClassName('card')[0];
+    for (j = 1; j < 12; j++) {
+      clone = card.cloneNode(true);
+      if ((j % 3) & 1) {
+        clone.classList.add('col');
+      }
+      if ((j / 3) & 1) {
+        clone.classList.add('row');
+      }
+      flex.appendChild(clone);
+    }
+  }
+
+  span = document.getElementsByClassName('name');
+  for (i = 0; i < span.length; i++) {
+    span[i].onblur = span[i].onkeyup = span[i].onpaste = function() {
+      var j;
+      for (j = 0; j < span.length; j++) {
+        if (span[j] !== this) {
+          span[j].innerText = this.innerText;
+        }
+      }
+    };
+  }
+}
+
+init();
+})();
+</script>
+</body>
+</html>
