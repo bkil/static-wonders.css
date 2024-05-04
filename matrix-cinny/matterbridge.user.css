@@ -1,0 +1,43 @@
+/* ==UserStyle==
+@name           Cinny Matterbridge
+@namespace      bkil.hu
+@version        2024.4.1
+@description    Improve relay bot appearance
+@author         bkil
+==/UserStyle== */
+@-moz-document domain("cinny.envs.net"),
+domain("app.cinny.in") {
+    /* hide fake images */
+    span > [data-user-id="@deltachat:matrix.org"] img {
+        opacity: 0.1;
+    }
+
+    /* remove display name of Matterbridge relay bot */
+    div > [data-user-id="@deltachat:matrix.org"] {
+        visibility: hidden;
+    }
+
+    /* colorize relayed name */
+    [data-message-item] > div > div + div > div[style="max-width: 100%;"] > div:not(._161nxvew) > b:not(._161nxveu):first-child {
+        color: yellow;
+        display: block;
+    }
+
+    /* remove /dc after relayed name */
+    [data-message-item] > div > div + div > div[style="max-width: 100%;"] > div:not(._161nxvew) > b:not(._161nxveu):first-child:not(:hover)::after {
+        content: '.';
+        margin-left: -1.6em;
+        min-width: 1.6em;
+        display: inline-block;
+        background-color: black;
+        background-color: var(--bg-surface);
+        color: black;
+        color: var(--bg-surface);
+    }
+
+    /* some usernames include an address, undo linkify */
+    [data-message-item] > div > div + div > div[style="max-width: 100%;"] > div > b:first-child > a {
+        color: yellow;
+        pointer-events: none;
+    }
+}
