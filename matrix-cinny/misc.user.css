@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Cinny misc
 @namespace      bkil.hu
-@version        2024.3.1
+@version        2024.8.1
 @description    Fixes to UX
 @author         bkil
 ==/UserStyle== */
@@ -26,6 +26,7 @@ domain("app.cinny.in") {
     }
 
     /* highlight message which actions will influence */
+    header + div div[style="position: relative;"] div[style^="min-height: 100%; padding: var(--"] [data-message-item] > div:first-child:hover + div,
     .room-view__scrollable [data-message-item] > div:first-child:hover + div {
         outline: auto
     }
@@ -33,5 +34,12 @@ domain("app.cinny.in") {
     /* make bold text more prominent */
     b {
         font-weight: bold;
+    }
+
+    /* eliminate scrollbar */
+    pre {
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        white-space: pre-wrap;
     }
 }
