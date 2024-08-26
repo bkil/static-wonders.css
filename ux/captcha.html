@@ -21,6 +21,8 @@ input {
 
 <input id=start type=checkbox><label id=startl for=start>Enable this box to start</label>
 
+<a id=nohash href=#contact>Contact me</a>
+
 <form autocomplete=on>
 
 <h2>Verification questions</h2>
@@ -39,7 +41,7 @@ input {
 
 <label for=n>Why is forty-two your favorite number?<input type=number name=n id=n required></label>
 
-<label for=f>Please download <a href=data:plain/text;,attachment download=x.captcha.txt>this file</a> and attach it here<input type=file name=f id=f accept='.captcha.txt' multiple required></label>
+<label for=f>Please download <a href=data:plain/text;,attachment download=x.captcha.txt>this file</a> and attach it here<input type=file name=f id=f accept='.captcha.txt' required></label>
 
 <label for=ll>Enter as many characters as required<input type=text name=ll id=ll minlength=6 maxlength=12 required></label>
 
@@ -62,8 +64,11 @@ input {
 
 <p>
 <input type=submit value=Verify formtarget=result formaction=captcha-result.html>
-<button formmethod=post formenctype=multipart/form-data formaction=mailto:tEst@localhost.example?subject=Order🇭🇺&amp;cc=c+c@🅿.localhost.example><iframe name=result>Enable iframes to see form submission result</iframe>
-</button>
+
+<button formmethod=post formenctype=multipart/form-data formaction=mailto:tEst@localhost.example?subject=Order🇭🇺&amp;cc=c+c@🅿.localhost.example
+><iframe name=result
+>Enable iframes to see form submission result</iframe
+></button>
 
 </form>
 
@@ -72,8 +77,6 @@ input {
   <option value=one>
   <option value=three>
 </datalist>
-
-<a id=nohash href=#contact>Contact me</a>
 
 </body>
 </html>
