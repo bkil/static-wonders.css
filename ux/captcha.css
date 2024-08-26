@@ -1,0 +1,40 @@
+#lul {
+  display: none;
+}
+
+label {
+  display: block;
+}
+
+input, textarea {
+  margin-left: 1em;
+  margin-top: 1px;
+}
+
+iframe {
+  height: 1.5em;
+  width: 4em;
+  pointer-events: none;
+  margin: 0.5em;
+}
+
+form,
+#contact:target #nohash,
+#start,
+#startl {
+  display: none;
+}
+
+#contact:target #start,
+#contact:target #startl {
+  display: inline;
+}
+
+#start#start:checked,
+#start:checked ~ #startl {
+  display: none;
+}
+
+#contact:target #start:checked ~ form {
+  display: block;
+}

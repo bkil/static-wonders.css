@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <meta http-equiv=content-type content='text/html; charset=UTF-8'>
+  <title>Backend-optional email CAPTCHA</title>
+  <meta property='og:description' content='CSS-only mock implementation without JavaScript based on CSP, iframe, form standards compliance and simple verification questions' name='description'>
+  <meta name=viewport content='width=device-width, initial-scale=1'>
+  <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
+  <meta http-equiv=x-dns-prefetch-control content=off>
+  <meta http-equiv='Content-Security-Policy' content="base-uri 'none'; default-src 'none'; style-src-elem 'nonce-nonce'; style-src-attr 'unsafe-hashes' 'sha256-ZqhM5xQOj0Og/l+8qEbc5F5YYumTdWvc5mtn7dECFuE='; img-src data:; frame-src 'self'; form-action 'self' mailto:; navigate-to 'none'; upgrade-insecure-requests;">
+  <style>
+input {
+  display: none;
+}
+  </style>
+  <link nonce=nonce rel=stylesheet href=captcha.css>
+  <link rel=stylesheet href=captcha2.css>
+</head>
+<body id=contact>
+
+<input id=start type=checkbox><label id=startl for=start>Enable this box to start</label>
+
+<form autocomplete=on>
+
+<h2>Verification questions</h2>
+
+<label for=e>What is your email address?<input type=email name=e id=e autocomplete=email required></label>
+
+<label for=m>What is my email address?<input type=email name=m id=m required></label>
+
+<label for=s>What color is the sky?<input type=color name=s id=s required></label>
+
+<label for=d>When was last Christmas?<input type=date name=d id=s required></label>
+
+<label for=n>What time is it?<input type=datetime-local name=n id=n required></label>
+
+<label for=r>Please turn this up<input type=range name=r id=r min=0 max=9 step=2 value=2 required></label>
+
+<label for=n>Why is forty-two your favorite number?<input type=number name=n id=n required></label>
+
+<label for=f>Please download <a href=data:plain/text;,attachment download=x.captcha.txt>this file</a> and attach it here<input type=file name=f id=f accept='.captcha.txt' multiple required></label>
+
+<label for=ll>Enter as many characters as required<input type=text name=ll id=ll minlength=6 maxlength=12 required></label>
+
+<label style=display:block id=lul for=ul>Delete as many characters as required<input type=text name=ul id=ul minlength=2 maxlength=2 value=abcdefgh required></label>
+
+<label style=display:none for=td>Enter a two digit number within the range<input type=number name=td id=td min=21 max=69 required></label>
+
+<label for=l>Please select the number starting with an 'o'<input type=text list=list name=l id=l minlength=3 maxlength=3 required></label>
+
+<label for=p>Enter the last word of this question<input type=text name=p id=p pattern='ques.*tion' required></label>
+
+<input type=hidden name=email id=email value=😎((commit_id))>
+<input type=email name=contact id=contact placeholder='Leave empty' disabled>
+<input type=email name=email_address id=email_address placeholder='Leave empty' readonly>
+<input type=email name=email2 id=email2 placeholder='Leave empty'>
+<input type=url name=website id=website placeholder='Leave empty'>
+<textarea name=comment id=comment rows=1 placeholder='Leave empty'></textarea>
+
+<label>You can finally start typing text you want to ask me here<input name=test id=test></label>
+
+<p>
+<input type=submit value=Verify formtarget=result formaction=captcha-result.html>
+<button formmethod=post formenctype=multipart/form-data formaction=mailto:tEst@localhost.example?subject=Order🇭🇺&amp;cc=c+c@🅿.localhost.example><iframe name=result>Enable iframes to see form submission result</iframe>
+</button>
+
+</form>
+
+<datalist id=list>
+  <option value=on>
+  <option value=one>
+  <option value=three>
+</datalist>
+
+<a id=nohash href=#contact>Contact me</a>
+
+</body>
+</html>
