@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <meta http-equiv=content-type content='text/html; charset=UTF-8'>
+  <title>Backend-optional email CAPTCHA 2</title>
+  <meta property='og:description' content='CSS-only mock implementation without JavaScript based on CSP, iframe, form standards compliance, submit anti-SEO and simple verification questions' name='description'>
+  <meta name=viewport content='width=device-width, initial-scale=1'>
+  <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
+  <meta http-equiv=x-dns-prefetch-control content=off>
+  <meta http-equiv='Content-Security-Policy' content="base-uri 'none'; default-src 'none'; style-src-elem 'unsafe-inline'; frame-src 'self' mailto:; form-action 'self'; navigate-to 'none';">
+  <style>
+#consent,
+#consent + #label {
+  display: inline;
+}
+
+form,
+iframe,
+#contact:target a,
+#start,
+#label,
+#consent:checked,
+#consent:checked + #label {
+  display: none;
+}
+
+#contact:target form,
+#contact:target #consent:checked ~ #start,
+#contact:target #consent:checked ~ iframe {
+  display: block;
+}
+
+iframe {
+  filter: brightness(50%);
+  transform: translateY(150%) scaleY(4);
+}
+
+html, body, form {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#start {
+  height: 2em;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  height: calc(25% - 0.5em);
+  width: 100%;
+  border: 0;
+}
+  </style>
+</head>
+<body id=contact>
+
+<a id=nohash href=#contact autofocus>Contact me</a>
+
+<form autocomplete=on>
+
+<input id=consent name=consent type=checkbox><label id=label for=consent>Enable this box to start</label>
+
+<input id=start type=submit value='Start filling form' formtarget=inner formaction=captcha2-inner.html>
+
+<iframe name=inner>Enable iframes to see form submission result</iframe>
+
+</form>
+
+</body>
+</html>
