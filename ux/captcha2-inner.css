@@ -1,5 +1,5 @@
 html {
-  transform: scaleY(0.25) scale(-1, 1);
+  transform: scale(-1, 0.25);
   position: absolute;
   top: -37.5%;
   height: 100%;
