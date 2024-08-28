@@ -31,11 +31,6 @@ iframe,
   display: block;
 }
 
-iframe {
-  filter: brightness(50%);
-  transform: translateY(150%) scaleY(4);
-}
-
 html, body, form {
   margin: 0;
   padding: 0;
@@ -47,6 +42,8 @@ html, body, form {
 }
 
 iframe {
+  filter: brightness(50%);
+  transform: scale(-1, 1) translateY(150%) scaleY(4);
   margin: 0;
   padding: 0;
   height: calc(25% - 0.5em);
@@ -59,11 +56,11 @@ iframe {
 
 <a id=nohash href=#contact autofocus>Contact me</a>
 
-<form autocomplete=on>
+<form autocomplete=on method=post>
 
 <input id=consent name=consent type=checkbox><label id=label for=consent>Enable this box to start</label>
 
-<input id=start type=submit value='Start filling form' formtarget=inner formaction=captcha2-inner.html>
+<input id=start type=submit value='Start filling form' formtarget=inner formmethod=get formaction=captcha2-inner.html>
 
 <iframe name=inner>Enable iframes to see form submission result</iframe>
 

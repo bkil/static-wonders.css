@@ -23,7 +23,7 @@ input {
 
 <a id=nohash href=#contact>Contact me</a>
 
-<form autocomplete=on>
+<form autocomplete=on method=post>
 
 <h2>Verification questions</h2>
 
@@ -63,7 +63,7 @@ input {
 <label>You can finally start typing text you want to ask me here<input name=test id=test></label>
 
 <p>
-<input type=submit value=Verify formtarget=result formaction=captcha-result.html>
+<input type=submit value=Verify formtarget=result formmethod=get formaction=captcha-result.html>
 
 <button formmethod=post formenctype=multipart/form-data formaction=mailto:tEst@localhost.example?subject=Order🇭🇺&amp;cc=c+c@🅿.localhost.example
 ><iframe name=result
