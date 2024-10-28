@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           hup.hu noCookie, noImages, tweaks
 @namespace      bkil.hu
-@version        2024.03.01
+@version        2024.05.01
 @description    Remove cookie and signup nagging banners. Make it usable with images disabled. Reduce clutter on interface by removing redundant edges. Tested both when logged in and when browsing as anonymous.
 @author         bkil
 ==/UserStyle== */
@@ -63,11 +63,45 @@
         opacity: 0.3;
         text-align: right;
         font-style: italic;
-        margin-left: 50%;
+    }
+
+    /* reduce vertical space by forced wrapping */
+    #block-hup-theme-content article.comment .content .comment-links-wrapper .links_before {
+        display: inline-block;
+    }
+
+    .flag-comment-vote,
+    .comment-links-wrapper label {
+        display: inline;
+    }
+
+    .field--name-signature.clearfix:after {
+        content: initial;
+    }
+
+    #block-hup-theme-content article.comment .content .comment-links-wrapper {
+        display: inline-block;
+        float: right;
+    }
+
+    #block-hup-theme-content article.comment .content .comment-links-wrapper {
+        padding: initial;
+        margin: initial;
     }
 
     #block-hup-theme-content article.comment .content .field--name-signature {
+        display: inline-block;
+        float: right;
         border-top: initial;
+        margin-top: initial;
+    }
+
+    .field--name-signature p {
+        margin: 0.5em;
+    }
+
+    #block-hup-theme-content article.comment {
+        margin: initial;
     }
 
     /* make comment reaction widgets less obtrusive and align to the right */
@@ -112,12 +146,6 @@
     /* hide comment borders */
     #block-hup-theme-content article.comment {
         border: initial;
-        margin-bottom: 0.5rem;
-    }
-
-    /* highlight target of link anchor hash */
-    #block-hup-theme-content article.comment:target {
-      border-left: 1px solid;
     }
 
     /* hide login nagging above each comment */
@@ -146,10 +174,7 @@
     }
 
     /* fade top right comment links when not hovered */
-    .parent-permalink:not(:hover) {
-        opacity: 0.6;
-    }
-    .comment_links > a:not(.parent-permalink):not(:hover) {
+    .comment_links > a:not(:hover) {
         opacity: 0.3;
     }
 
@@ -157,14 +182,19 @@
         opacity: 0.3;
     }
 
-    /* remove horizontal scroll of blocks */
-    pre {
-      padding-left: 1em;
-      margin-left: 1em;
-      border-left: 1px solid;
-      white-space: pre-wrap;
+    /* increase width to full screen */
+    div.layout-content {
+        margin-left: initial;
+        margin-right: initial;
+        width: initial;
     }
 
+    aside.layout-sidebar-first {
+        float: initial;
+    }
+    .sidebars_wrapper .block {
+        border: initial;
+    }
     /* substitute text for editor widget icons when images are disabled */
     .cke_button__bold::before {
         content: "bold"
