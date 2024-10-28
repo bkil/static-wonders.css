@@ -42,4 +42,16 @@ domain("app.cinny.in") {
         word-break: break-all;
         white-space: pre-wrap;
     }
+
+    /* protect against Rickroll */
+    #root a[target="_blank"]::after {
+      font: initial;
+      font-style: italic;
+      content: " " attr(href);
+    }
+
+    /* show whole image in thumbnail */
+    [data-message-item] img[alt][title][tabindex="0"][loading="lazy"] {
+      object-fit: contain;
+    }
 }
