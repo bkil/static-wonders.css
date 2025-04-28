@@ -8,7 +8,7 @@
   <meta name=viewport content='width=device-width, initial-scale=1'>
   <link rel='shortcut icon' type=image/x-icon href=data:image/x-icon;,>
   <meta http-equiv=x-dns-prefetch-control content=off>
-  <meta http-equiv='Content-Security-Policy' content="base-uri 'none'; default-src 'none'; style-src-elem 'nonce-nonce'; style-src-attr 'unsafe-hashes' 'sha256-ZqhM5xQOj0Og/l+8qEbc5F5YYumTdWvc5mtn7dECFuE='; frame-src 'self'; form-action 'self' mailto:; navigate-to 'none'; upgrade-insecure-requests;">
+  <meta http-equiv='Content-Security-Policy' content="base-uri 'none'; default-src 'none'; style-src-elem 'nonce-nonce'; style-src-attr 'unsafe-hashes' 'sha256-ZqhM5xQOj0Og/l+8qEbc5F5YYumTdWvc5mtn7dECFuE='; img-src data: 'self'; frame-src 'self'; form-action 'self' mailto:; navigate-to 'none'; upgrade-insecure-requests;">
   <style>
 input {
   display: none;
@@ -37,7 +37,7 @@ input {
 
 <label for=n>Why is forty-two your favorite number?<input type=number name=n id=n required></label>
 
-<label for=f>Please download <a href=data:plain/text;,attachment download=x.captcha.txt>this file</a> and attach it here<input type=file name=f id=f accept='.captcha.txt' required></label>
+<label for=f>Please download <a href=data:application/octet-stream;charset=binary,attachment target=_blank download=x.captcha.txt>this file</a> and attach it here<input type=file name=f id=f accept='.captcha.txt' required></label>
 
 <label for=ll>Enter as many characters as required<input type=text name=ll id=ll minlength=6 maxlength=12 required></label>
 
@@ -50,7 +50,7 @@ input {
 <label for=p>Enter the last word of this question<input type=text name=p id=p pattern='ques.*tion' required></label>
 
 <input type=hidden name=email id=email value=😎((commit_id))>
-<input type=email name=contact id=contact placeholder='Leave empty' disabled>
+<input type=email name=reply id=reply placeholder='Leave empty' disabled>
 <input type=email name=email_address id=email_address placeholder='Leave empty' readonly>
 <input type=email name=email2 id=email2 placeholder='Leave empty'>
 <input type=url name=website id=website placeholder='Leave empty'>
