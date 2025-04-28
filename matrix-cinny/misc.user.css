@@ -44,7 +44,7 @@ domain("app.cinny.in") {
     }
 
     /* protect against Rickroll */
-    #root a[target="_blank"]::after {
+    #root a[target="_blank"]:not([href^="https://matrix.to/"])::after {
       font: initial;
       font-style: italic;
       content: " " attr(href);
