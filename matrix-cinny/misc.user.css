@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Cinny misc
 @namespace      bkil.hu
-@version        2024.8.1
+@version        2025.5.1
 @description    Fixes to UX
 @author         bkil
 ==/UserStyle== */
@@ -53,5 +53,20 @@ domain("app.cinny.in") {
     /* show whole image in thumbnail */
     [data-message-item] img[alt][title][tabindex="0"][loading="lazy"] {
       object-fit: contain;
+    }
+
+    /* hide invite avatars */
+    header ~ div div > span > img[draggable="false"][data-image-loaded][src^="https://"][alt]:not([alt=""]) {
+        display: none;
+    }
+
+    /* hide incoming invite count */
+    #root > div:nth-child(3) > div:first-child > div:first-child > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > button:first-child + div {
+        display: none;
+    }
+
+    /* indent threaded replies */
+    [data-message-item][data-message-id] > div > div:nth-child(2) > div[style="max-width: 100%;"] > div:first-child + div:not([style]) {
+        margin-left: 2em;
     }
 }
