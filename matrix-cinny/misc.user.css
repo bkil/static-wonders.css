@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Cinny misc
 @namespace      bkil.hu
-@version        2025.5.1
+@version        2025.6.1
 @description    Fixes to UX
 @author         bkil
 ==/UserStyle== */
@@ -68,5 +68,27 @@ domain("app.cinny.in") {
     /* indent threaded replies */
     [data-message-item][data-message-id] > div > div:nth-child(2) > div[style="max-width: 100%;"] > div:first-child + div:not([style]) {
         margin-left: 2em;
+    }
+
+    /* suffix bridged nicks */
+    div > button[data-user-id^="@_bifrost_"]::after {
+        content: " (xmpp)";
+        /* disable other usercss */
+        --fonty: initial;
+    }
+    div > button[data-user-id^="@_oftc_"]::after {
+        content: " (oftc)";
+        /* disable other usercss */
+        --fonty: initial;
+    }
+
+    /* deemphasize display name changes */
+    [data-message-item] {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    [data-message-item]:not(:hover) > div:not([class]) {
+        opacity: 0.3;
     }
 }
