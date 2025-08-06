@@ -4,8 +4,8 @@ pages:
   before_script:
   - apk update && apk add brotli
   script:
-  - gzip -9 -f -k */*.html
-  - brotli -f -k */*.html
+  - gzip -9 -f -k */*.htm */*.html
+  - brotli -f -k */*.htm */*.html
   - mkdir .public
   - mv -t .public *
   - mv .public public
