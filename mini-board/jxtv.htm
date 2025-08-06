@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jxtv</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background-color: white;
+  color: black;
+}
+
+input, textarea {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+textarea {
+  display: block;
+  font-family: sans-serif;
+  width: 11em;
+}
+</style>
+</head>
+<body>
+<script>
+'use strict';
+function submit() {
+  var nl = String.fromCharCode(10);
+  var o = '';
+  var s;
+  var a = window.f.t.value.split(nl);
+  var j;
+  var i = -1;
+  while (10 > (i = i + 1)) {
+    s = a[i] || '';
+    s = s + '##########';
+    s = s.substring(0, 10);
+    if (!j && (10 > i) && (j = s.indexOf('#') + 1)) {
+      s = s.substring(0, j - 1) + 'o' + s.substring(j);
+    }
+    if (i) {
+      o = o + nl;
+    }
+    o = o + s;
+  }
+  window.f.t.value = o;
+}
+</script>
+<form name=f action="javascript:submit()">
+<textarea name=t rows=11 cols=11
+>##########
+##########
+##o#######
+###o######
+####u#####
+####uo####
+####u#o###
+####u#####
+##########
+##########</textarea>
+<input type=submit>
+</form>
+</body>
+</html>

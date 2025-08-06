@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ib109</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, form {
+  height: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#b,
+#f:target #a {
+  display: none;
+}
+
+#f:target #b {
+  display: block;
+}
+
+img {
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+</style>
+</head>
+<body>
+<form id=f action="#f">
+<input id=a type=image width=109 height=109 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABtAQAAAACDg9L7AAAA/klEQVR4AcXUgWbDUBQG4DzW6PsMsAGDUsAAeYQ9QhVMmiyN2EMMEzUHEDvHFB3HbbbdOE3+umJzw4Lw+eXkz4kk6SrRk50+k27LetKKl/dSSJZ0Tz11JT7d8eKBtrxckU83XOzanPW69Xz8YcZ6N2Jx5qa/VtNvXl3eF4/LlJDNfCTg31odkC3yFakRjN4VTl4PPCIFua9E04F1RKtnpAuwPZOQLkAaJke02oeYG188M2RprDE9eua3xohWdbgVMONi/Pil0fUpMr9ZxO/q7TetRNfjVsYG08Z2lXrSfLty2EpD76g0CqZirYzzf4NB0j/9r94n+YF0kzxMtfoC8gznlsmfAWoAAAAASUVORK5CYII=" alt="">
+<input id=b type=image formaction="#" width=109 height=109 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABtAQAAAACDg9L7AAABBUlEQVR4AazTgWbEMBgH8D7WuPcZYAcMjgMM0EfYI5wDk0vWVuwhhqmaAML3Yej4tF2Xytp/zGyyovLz1/SfpC2mhmWMt/diupCM0tDhjg2rYnpcKEcOaU27e3ehw9GF9Eym9prk2gc+fFKR3G5ovnhenpVy5lX6XrzS1CHb/6MD/q3VG9IjX5CSwfy9gplPK3skI7t5VK60Ga2ekEMYaaBXsARfJSnQ6X2cOaNVlxJaPQcqZBVpMe0D9T4yo5X9vhVQkdkuv4ocMF2ob3b5e/X6m1Ysp22ryBbTNu5Vmf0P2h+/K0nOCE+QMWU8Qf4YjfIgZhE0QOXVW7zcj2gBi5f7GZ+rALse5vyDZr/7AAAAAElFTkSuQmCC" alt="">
+</form>
+</body>
+</html>

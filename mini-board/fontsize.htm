@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>fontsize</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+</head>
+<body>
+<script>
+'use strict';
+
+function print(o, x, t, a, s) {
+  o.h = o.h + '<' + t + a + '>';
+  var c = String.fromCharCode(x);
+  if (!(x - 32)) {
+    c = '&nbsp;';
+  }
+  var i = 7;
+  while (i = i - 1) {
+    o.h = o.h + c;
+  }
+  o.h = o.h + ' ' + s + '</' + t + '>'
+}
+
+function writeHtm(o) {
+  o.h = '<head>' +
+    '<meta name=viewport content="width=device-width, initial-scale=1">' +
+    '<style>' +
+    '.a { font-family: sans-serif; }' +
+    '.s { font-family: serif; }' +
+    '.m { font-family: monospace; }' +
+    '</style>' + 
+    '</head> ' +
+    o.h;
+  document.write(o.h);
+  document.close();
+}
+
+function loaded() {
+  var o = new Object;
+  o.h = '';
+  var i = 31;
+  while (127 > (i = i + 1)) {
+    print(o, i, 'div', '', 'd ' + document.getElementById('d' + i).offsetWidth);
+    print(o, i, 'div', ' class=a', 'a ' + document.getElementById('a' + i).offsetWidth);
+    print(o, i, 'div', ' class=s', 's ' + document.getElementById('s' + i).offsetWidth);
+    print(o, i, 'div', ' class=m', 'm ' + document.getElementById('m' + i).offsetWidth);
+  }
+  writeHtm(o);
+}
+
+function init() {
+  var o = new Object;
+  o.h = '';
+  var i = 31;
+  while (127 > (i = i + 1)) {
+    print(o, i, 'span', ' id=d' + i, '');
+    print(o, i, 'span', ' class=a id=a' + i, '');
+    print(o, i, 'span', ' class=s id=s' + i, '');
+    print(o, i, 'span', ' class=m id=m' + i, '');
+  }
+  writeHtm(o);
+  setTimeout(loaded, 0);
+}
+
+init();
+</script>
+</body>
+</html>

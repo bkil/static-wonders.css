@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ca</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+/* mutually exclusive borders due to Dillo border-collapse bug, undo default borders added for links2 */
+html {
+  font-family: monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+td, th {
+  min-width: 10px;
+  border-width: 1px;
+  text-align: center;
+}
+
+th {
+  font-weight: initial;
+}
+
+.t {
+  border-top-style: none;
+}
+
+.l {
+  border-left-style: none;
+}
+
+.tl {
+  border-left-style: none;
+  border-top-style: none;
+}
+
+.b {
+  border-right-style: none;
+  border-left-style: none;
+  border-bottom-style: none;
+}
+
+.r {
+  border-right-style: none;
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+.br {
+  border: 0;
+}
+
+td {
+  border-bottom-style: solid;
+  border-right-style: solid;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<!-- added border=1 for links2 -->
+<table border=1 id=t>
+<!-- added &nbsp; for links2, would need a visible character for lynx -->
+<tr><td class=tl><a href="?a0">&nbsp;</a></td><td class=t><a href="?b0">&nbsp;</a></td><td class=t><a href="?c0">&nbsp;</a></td><td class=t><a href="?d0">&nbsp;</a></td><td class=t><a href="?e0">&nbsp;</a></td><td class=t><a href="?f0">&nbsp;</a></td><td class=t><a href="?g0">&nbsp;</a></td><td class=t><a href="?h0">&nbsp;</a></td><td class=t><a href="?i0">&nbsp;</a></td><td class=t><a href="?j0">&nbsp;</a></td><th class=r>0</th></tr>
+<tr><td class=l><a href="?a1">&nbsp;</a></td><td><a href="?b1">&nbsp;</a></td><td><a href="?c1">&nbsp;</a></td><td><a href="?d1">&nbsp;</a></td><td><a href="?e1">&nbsp;</a></td><td><a href="?f1">&nbsp;</a></td><td><a href="?g1">&nbsp;</a></td><td><a href="?h1">&nbsp;</a></td><td><a href="?i1">&nbsp;</a></td><td><a href="?j1">&nbsp;</a></td><th class=r>1</th></tr>
+<tr><td class=l><a href="?a2">&nbsp;</a></td><td><a href="?b2">&nbsp;</a></td><td>o</td><td><a href="?d2">&nbsp;</a></td><td><a href="?e2">&nbsp;</a></td><td><a href="?f2">&nbsp;</a></td><td><a href="?g2">&nbsp;</a></td><td><a href="?h2">&nbsp;</a></td><td><a href="?i2">&nbsp;</a></td><td><a href="?j2">&nbsp;</a></td><th class=r>2</th></tr>
+<tr><td class=l><a href="?a3">&nbsp;</a></td><td><a href="?b3">&nbsp;</a></td><td><a href="?c3">&nbsp;</a></td><td>o</td><td><a href="?e3">&nbsp;</a></td><td><a href="?f3">&nbsp;</a></td><td><a href="?g3">&nbsp;</a></td><td><a href="?h3">&nbsp;</a></td><td><a href="?i3">&nbsp;</a></td><td><a href="?j3">&nbsp;</a></td><th class=r>3</th></tr>
+<tr><td class=l><a href="?a4">&nbsp;</a></td><td><a href="?b4">&nbsp;</a></td><td><a href="?c4">&nbsp;</a></td><td><a href="?d4">&nbsp;</a></td><td>x</td><td><a href="?f4">&nbsp;</a></td><td><a href="?g4">&nbsp;</a></td><td><a href="?h4">&nbsp;</a></td><td><a href="?i4">&nbsp;</a></td><td><a href="?j4">&nbsp;</a></td><th class=r>4</th></tr>
+<tr><td class=l><a href="?a5">&nbsp;</a></td><td><a href="?b5">&nbsp;</a></td><td><a href="?c5">&nbsp;</a></td><td><a href="?d5">&nbsp;</a></td><td>x</td><td>o</td><td><a href="?g5">&nbsp;</a></td><td><a href="?h5">&nbsp;</a></td><td><a href="?i5">&nbsp;</a></td><td><a href="?j5">&nbsp;</a></td><th class=r>5</th></tr>
+<tr><td class=l><a href="?a6">&nbsp;</a></td><td><a href="?b6">&nbsp;</a></td><td><a href="?c6">&nbsp;</a></td><td><a href="?d6">&nbsp;</a></td><td>x</td><td><a href="?f6">&nbsp;</a></td><td>o</td><td><a href="?h6">&nbsp;</a></td><td><a href="?i6">&nbsp;</a></td><td><a href="?j6">&nbsp;</a></td><th class=r>6</th></tr>
+<tr><td class=l><a href="?a7">&nbsp;</a></td><td><a href="?b7">&nbsp;</a></td><td><a href="?c7">&nbsp;</a></td><td><a href="?d7">&nbsp;</a></td><td>x</td><td><a href="?f7">&nbsp;</a></td><td><a href="?g7">&nbsp;</a></td><td><a href="?h7">&nbsp;</a></td><td><a href="?i7">&nbsp;</a></td><td><a href="?j7">&nbsp;</a></td><th class=r>7</th></tr>
+<tr><td class=l><a href="?a8">&nbsp;</a></td><td><a href="?b8">&nbsp;</a></td><td><a href="?c8">&nbsp;</a></td><td><a href="?d8">&nbsp;</a></td><td><a href="?e8">&nbsp;</a></td><td><a href="?f8">&nbsp;</a></td><td><a href="?g8">&nbsp;</a></td><td><a href="?h8">&nbsp;</a></td><td><a href="?i8">&nbsp;</a></td><td><a href="?j8">&nbsp;</a></td><th class=r>8</th></tr>
+<tr><td class=l><a href="?a9">&nbsp;</a></td><td><a href="?b9">&nbsp;</a></td><td><a href="?c9">&nbsp;</a></td><td><a href="?d9">&nbsp;</a></td><td><a href="?e9">&nbsp;</a></td><td><a href="?f9">&nbsp;</a></td><td><a href="?g9">&nbsp;</a></td><td><a href="?h9">&nbsp;</a></td><td><a href="?i9">&nbsp;</a></td><td><a href="?j9">&nbsp;</a></td><th class=r>9</th></tr>
+<tr><th class=b>a</th><th class=b>b</th><th class=b>c</th><th class=b>d</th><th class=b>e</th><th class=b>f</th><th class=b>g</th><th class=b>h</th><th class=b>i</th><th class=b>j</th><th class=br></th></tr>
+</table>
+<script>
+'use strict';
+function init() {
+  var i = window.location.href.indexOf('?') + 1;
+  var h = window.location.href.substring(i);
+  if (!i || (h.length-2)) {
+    return 0;
+  }
+  var x = h.charCodeAt(0) - 65;
+  var y = h.charCodeAt(1) - 48;
+  if ((0 > y) || (y > 9) || (0 > x) || ((x > 31) && (x = x - 32) && 0) || (x > 9)) {
+    return 0;
+  }
+  document.getElementById('t').rows[y].cells[x].innerText = 'x';
+}
+
+init();
+</script>
+</body>
+</html>

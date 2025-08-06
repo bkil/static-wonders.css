@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jcsj</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, td {
+  margin: 0;
+  padding: 0;
+}
+
+td, th {
+  width: 8px;
+  height: 1em;
+  text-align: center;
+}
+
+th {
+  font-weight: initial;
+}
+
+input {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+</style>
+</head>
+<body>
+<script>
+'use strict';
+function f(xy) {
+  document.getElementById('t').rows[xy%10].cells[(xy/10)|0].innerText = 'x';
+}
+</script>
+<form>
+<table id=t>
+<tr><td><input type=submit value="" formaction="javascript:f(00)"></td><td><input type=submit value="" formaction="javascript:f(10)"></td><td><input type=submit value="" formaction="javascript:f(20)"></td><td><input type=submit value="" formaction="javascript:f(30)"></td><td><input type=submit value="" formaction="javascript:f(40)"></td><td><input type=submit value="" formaction="javascript:f(50)"></td><td><input type=submit value="" formaction="javascript:f(60)"></td><td><input type=submit value="" formaction="javascript:f(70)"></td><td><input type=submit value="" formaction="javascript:f(80)"></td><td><input type=submit value="" formaction="javascript:f(90)"></td><th>0</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(01)"></td><td><input type=submit value="" formaction="javascript:f(11)"></td><td><input type=submit value="" formaction="javascript:f(21)"></td><td><input type=submit value="" formaction="javascript:f(31)"></td><td><input type=submit value="" formaction="javascript:f(41)"></td><td><input type=submit value="" formaction="javascript:f(51)"></td><td><input type=submit value="" formaction="javascript:f(61)"></td><td><input type=submit value="" formaction="javascript:f(71)"></td><td><input type=submit value="" formaction="javascript:f(81)"></td><td><input type=submit value="" formaction="javascript:f(91)"></td><th>1</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(02)"></td><td><input type=submit value="" formaction="javascript:f(12)"></td><td>o</td><td><input type=submit value="" formaction="javascript:f(32)"></td><td><input type=submit value="" formaction="javascript:f(42)"></td><td><input type=submit value="" formaction="javascript:f(52)"></td><td><input type=submit value="" formaction="javascript:f(62)"></td><td><input type=submit value="" formaction="javascript:f(72)"></td><td><input type=submit value="" formaction="javascript:f(82)"></td><td><input type=submit value="" formaction="javascript:f(92)"></td><th>2</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(03)"></td><td><input type=submit value="" formaction="javascript:f(13)"></td><td><input type=submit value="" formaction="javascript:f(23)"></td><td>o</td><td><input type=submit value="" formaction="javascript:f(43)"></td><td><input type=submit value="" formaction="javascript:f(53)"></td><td><input type=submit value="" formaction="javascript:f(63)"></td><td><input type=submit value="" formaction="javascript:f(73)"></td><td><input type=submit value="" formaction="javascript:f(83)"></td><td><input type=submit value="" formaction="javascript:f(93)"></td><th>3</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(04)"></td><td><input type=submit value="" formaction="javascript:f(14)"></td><td><input type=submit value="" formaction="javascript:f(24)"></td><td><input type=submit value="" formaction="javascript:f(34)"></td><td>x</td><td><input type=submit value="" formaction="javascript:f(54)"></td><td><input type=submit value="" formaction="javascript:f(64)"></td><td><input type=submit value="" formaction="javascript:f(74)"></td><td><input type=submit value="" formaction="javascript:f(84)"></td><td><input type=submit value="" formaction="javascript:f(94)"></td><th>4</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(05)"></td><td><input type=submit value="" formaction="javascript:f(15)"></td><td><input type=submit value="" formaction="javascript:f(25)"></td><td><input type=submit value="" formaction="javascript:f(35)"></td><td>x</td><td>o</td><td><input type=submit value="" formaction="javascript:f(65)"></td><td><input type=submit value="" formaction="javascript:f(75)"></td><td><input type=submit value="" formaction="javascript:f(85)"></td><td><input type=submit value="" formaction="javascript:f(95)"></td><th>5</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(06)"></td><td><input type=submit value="" formaction="javascript:f(16)"></td><td><input type=submit value="" formaction="javascript:f(26)"></td><td><input type=submit value="" formaction="javascript:f(36)"></td><td>x</td><td><input type=submit value="" formaction="javascript:f(56)"></td><td>o</td><td><input type=submit value="" formaction="javascript:f(76)"></td><td><input type=submit value="" formaction="javascript:f(86)"></td><td><input type=submit value="" formaction="javascript:f(96)"></td><th>6</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(07)"></td><td><input type=submit value="" formaction="javascript:f(17)"></td><td><input type=submit value="" formaction="javascript:f(27)"></td><td><input type=submit value="" formaction="javascript:f(37)"></td><td>x</td><td><input type=submit value="" formaction="javascript:f(57)"></td><td><input type=submit value="" formaction="javascript:f(67)"></td><td><input type=submit value="" formaction="javascript:f(77)"></td><td><input type=submit value="" formaction="javascript:f(87)"></td><td><input type=submit value="" formaction="javascript:f(97)"></td><th>7</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(08)"></td><td><input type=submit value="" formaction="javascript:f(18)"></td><td><input type=submit value="" formaction="javascript:f(28)"></td><td><input type=submit value="" formaction="javascript:f(38)"></td><td><input type=submit value="" formaction="javascript:f(48)"></td><td><input type=submit value="" formaction="javascript:f(58)"></td><td><input type=submit value="" formaction="javascript:f(68)"></td><td><input type=submit value="" formaction="javascript:f(78)"></td><td><input type=submit value="" formaction="javascript:f(88)"></td><td><input type=submit value="" formaction="javascript:f(98)"></td><th>8</th></tr>
+<tr><td><input type=submit value="" formaction="javascript:f(09)"></td><td><input type=submit value="" formaction="javascript:f(19)"></td><td><input type=submit value="" formaction="javascript:f(29)"></td><td><input type=submit value="" formaction="javascript:f(39)"></td><td><input type=submit value="" formaction="javascript:f(49)"></td><td><input type=submit value="" formaction="javascript:f(59)"></td><td><input type=submit value="" formaction="javascript:f(69)"></td><td><input type=submit value="" formaction="javascript:f(79)"></td><td><input type=submit value="" formaction="javascript:f(89)"></td><td><input type=submit value="" formaction="javascript:f(99)"></td><th>9</th></tr>
+<tr><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th>i</th><th>j</th><th></th></tr>
+</table>
+</form>
+</body>
+</html>

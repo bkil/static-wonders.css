@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jdi</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background-color: white;
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+</style>
+</head>
+<body>
+<script>
+'use strict';
+function submit() {
+  var t = document.getElementById('t');
+  var h = window.f.c.value;
+  if (h.length-2) {
+    return 0;
+  }
+  var x = h.charCodeAt(0) - 65;
+  var y = h.charCodeAt(1) - 48;
+  if ((0 > y) || (y > 9) || (0 > x) || ((x > 31) && (x = x - 32) && 0) || (x > 9)) {
+    return 0;
+  }
+  var nl = '<br>';
+  var o = '';
+  var s;
+  var a = t.innerHTML.split(nl);
+  var i = -1;
+  while (11 > (i = i + 1)) {
+    s = a[i] || '';
+    s = s + '###########';
+    s = s.substring(0, 11);
+    if (!(i-y)) {
+      s = s.substring(0, x) + 'u' + s.substring(x + 1);
+    }
+    if (i) {
+      o = o + nl;
+    }
+    o = o + s;
+  }
+  window.f.c.value = '';
+  t.innerHTML = o;
+}
+</script>
+<div id=t
+>##########0<br
+>##########1<br
+>##o#######2<br
+>###o######3<br
+>####u#####4<br
+>####uo####5<br
+>####u#o###6<br
+>####u#####7<br
+>##########8<br
+>##########9<br
+>abcdEFGhIJ#</div>
+<form name=f action="javascript:submit()">
+<input name=c size=2>
+<input type=submit>
+</form>
+</body>
+</html>

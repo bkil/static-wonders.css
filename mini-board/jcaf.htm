@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jcaf</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  width: 8px;
+  text-align: center;
+}
+
+th {
+  font-weight: initial;
+}
+
+td {
+  border-width: 1px;
+  border-bottom-style: solid;
+  border-right-style: solid;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<table id=t>
+<tr><td><a href="#a0">&nbsp;</a></td><td><a href="#b0">&nbsp;</a></td><td><a href="#c0">&nbsp;</a></td><td><a href="#d0">&nbsp;</a></td><td><a href="#e0">&nbsp;</a></td><td><a href="#f0">&nbsp;</a></td><td><a href="#g0">&nbsp;</a></td><td><a href="#h0">&nbsp;</a></td><td><a href="#i0">&nbsp;</a></td><td><a href="#j0">&nbsp;</a></td><th>0</th></tr>
+<tr><td><a href="#a1">&nbsp;</a></td><td><a href="#b1">&nbsp;</a></td><td><a href="#c1">&nbsp;</a></td><td><a href="#d1">&nbsp;</a></td><td><a href="#e1">&nbsp;</a></td><td><a href="#f1">&nbsp;</a></td><td><a href="#g1">&nbsp;</a></td><td><a href="#h1">&nbsp;</a></td><td><a href="#i1">&nbsp;</a></td><td><a href="#j1">&nbsp;</a></td><th>1</th></tr>
+<tr><td><a href="#a2">&nbsp;</a></td><td><a href="#b2">&nbsp;</a></td><td>o</td><td><a href="#d2">&nbsp;</a></td><td><a href="#e2">&nbsp;</a></td><td><a href="#f2">&nbsp;</a></td><td><a href="#g2">&nbsp;</a></td><td><a href="#h2">&nbsp;</a></td><td><a href="#i2">&nbsp;</a></td><td><a href="#j2">&nbsp;</a></td><th>2</th></tr>
+<tr><td><a href="#a3">&nbsp;</a></td><td><a href="#b3">&nbsp;</a></td><td><a href="#c3">&nbsp;</a></td><td>o</td><td><a href="#e3">&nbsp;</a></td><td><a href="#f3">&nbsp;</a></td><td><a href="#g3">&nbsp;</a></td><td><a href="#h3">&nbsp;</a></td><td><a href="#i3">&nbsp;</a></td><td><a href="#j3">&nbsp;</a></td><th>3</th></tr>
+<tr><td><a href="#a4">&nbsp;</a></td><td><a href="#b4">&nbsp;</a></td><td><a href="#c4">&nbsp;</a></td><td><a href="#d4">&nbsp;</a></td><td>x</td><td><a href="#f4">&nbsp;</a></td><td><a href="#g4">&nbsp;</a></td><td><a href="#h4">&nbsp;</a></td><td><a href="#i4">&nbsp;</a></td><td><a href="#j4">&nbsp;</a></td><th>4</th></tr>
+<tr><td><a href="#a5">&nbsp;</a></td><td><a href="#b5">&nbsp;</a></td><td><a href="#c5">&nbsp;</a></td><td><a href="#d5">&nbsp;</a></td><td>x</td><td>o</td><td><a href="#g5">&nbsp;</a></td><td><a href="#h5">&nbsp;</a></td><td><a href="#i5">&nbsp;</a></td><td><a href="#j5">&nbsp;</a></td><th>5</th></tr>
+<tr><td><a href="#a6">&nbsp;</a></td><td><a href="#b6">&nbsp;</a></td><td><a href="#c6">&nbsp;</a></td><td><a href="#d6">&nbsp;</a></td><td>x</td><td><a href="#f6">&nbsp;</a></td><td>o</td><td><a href="#h6">&nbsp;</a></td><td><a href="#i6">&nbsp;</a></td><td><a href="#j6">&nbsp;</a></td><th>6</th></tr>
+<tr><td><a href="#a7">&nbsp;</a></td><td><a href="#b7">&nbsp;</a></td><td><a href="#c7">&nbsp;</a></td><td><a href="#d7">&nbsp;</a></td><td>x</td><td><a href="#f7">&nbsp;</a></td><td><a href="#g7">&nbsp;</a></td><td><a href="#h7">&nbsp;</a></td><td><a href="#i7">&nbsp;</a></td><td><a href="#j7">&nbsp;</a></td><th>7</th></tr>
+<tr><td><a href="#a8">&nbsp;</a></td><td><a href="#b8">&nbsp;</a></td><td><a href="#c8">&nbsp;</a></td><td><a href="#d8">&nbsp;</a></td><td><a href="#e8">&nbsp;</a></td><td><a href="#f8">&nbsp;</a></td><td><a href="#g8">&nbsp;</a></td><td><a href="#h8">&nbsp;</a></td><td><a href="#i8">&nbsp;</a></td><td><a href="#j8">&nbsp;</a></td><th>8</th></tr>
+<tr><td><a href="#a9">&nbsp;</a></td><td><a href="#b9">&nbsp;</a></td><td><a href="#c9">&nbsp;</a></td><td><a href="#d9">&nbsp;</a></td><td><a href="#e9">&nbsp;</a></td><td><a href="#f9">&nbsp;</a></td><td><a href="#g9">&nbsp;</a></td><td><a href="#h9">&nbsp;</a></td><td><a href="#i9">&nbsp;</a></td><td><a href="#j9">&nbsp;</a></td><th>9</th></tr>
+<tr><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th>i</th><th>j</th><th></th></tr>
+</table>
+<script>
+'use strict';
+function changed() {
+  var i = window.location.href.indexOf('#') + 1;
+  var h = window.location.href.substring(i);
+  if (!i || (h.length-2)) {
+    return 0;
+  }
+  var x = h.charCodeAt(0) - 97;
+  var y = h.charCodeAt(1) - 48;
+  if ((0 > x) || (0 > y) || (x > 9) || (y > 9)) {
+    return 0;
+  }
+  document.getElementById('t').rows[y].cells[x].innerText = 'x';
+}
+
+function init() {
+  changed();
+  window.onhashchange = changed;
+}
+
+init();
+</script>
+</body>
+</html>

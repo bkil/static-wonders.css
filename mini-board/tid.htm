@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tid</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+td, th {
+  height: 20px;
+  min-width: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+}
+
+th {
+  font-weight: initial;
+}
+</style>
+</head>
+<body>
+<table id=t>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>0</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>1</th></tr>
+<tr><td></td><td></td><td>o</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>2</th></tr>
+<tr><td></td><td></td><td></td><td>o</td><td></td><td></td><td></td><td></td><td></td><td></td><th>3</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td></td><td></td><td></td><td></td><td></td><th>4</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td>o</td><td></td><td></td><td></td><td></td><th>5</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td></td><td>o</td><td></td><td></td><td></td><th>6</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td></td><td></td><td></td><td></td><td></td><th>7</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>8</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>9</th></tr>
+<tr><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th>i</th><th>j</th><th></th></tr>
+</table>
+<form>
+<input name=c size=2>
+<input type=submit>
+</form>
+<script>
+'use strict';
+function init() {
+  var i = window.location.href.indexOf('?') + 1;
+  var h = window.location.href.substring(i);
+  if (!i || (h.length-4)) {
+    return 0;
+  }
+  var x = h.charCodeAt(2) - 65;
+  var y = h.charCodeAt(3) - 48;
+  if ((0 > y) || (y > 9) || (0 > x) || ((x > 31) && (x = x - 32) && 0) || (x > 9)) {
+    return 0;
+  }
+  document.getElementById('t').rows[y].cells[x].innerText = 'x';
+}
+
+init();
+</script>
+</body>
+</html>

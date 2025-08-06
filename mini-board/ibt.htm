@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ibt</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, pre, form, input {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  display: inline-block;
+  position: relative;
+}
+
+pre {
+  cursor: crosshair;
+}
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+<form>
+<pre id=t
+>          0
+          1
+  o       2
+   o      3
+    x     4
+    xo    5
+    x o   6
+    x     7
+          8
+          9
+abcdefghij</pre>
+<input type=image src="data:image/gif;base64,R0lGODdhAQABAJAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="">
+</form>
+<script>
+'use strict';
+function init() {
+  var t = document.getElementById('t');
+  var h = window.location.href;
+  var x = h.indexOf('?x=') + 1;
+  var y = h.indexOf('&y=') + 1;
+  if (!y || !x || (x > y) ||
+    isNaN(x = parseInt(h.substring(x + 2, y - 1))) ||
+    (0 > (x = ((11 * x) / t.offsetWidth) | 0)) || (x > 9) ||
+    isNaN(y = parseInt(h.substring(y + 2))) ||
+    (0 > (y = ((11 * y) / t.offsetHeight) | 0)) || (y > 9)
+    ) {
+    return 0;
+  }
+  var nl = String.fromCharCode(10);
+  var o = '';
+  var s;
+  var a = t.innerText.split(nl);
+  var i = -1;
+  while (11 > (i = i + 1)) {
+    s = a[i] || '';
+    s = s + '           ';
+    s = s.substring(0, 11);
+    if (!(i-y)) {
+      s = s.substring(0, x) + 'x' + s.substring(x + 1);
+    }
+    if (i) {
+      o = o + nl;
+    }
+    o = o + s;
+  }
+  t.innerText = o;
+}
+
+init();
+</script>
+</body>
+</html>

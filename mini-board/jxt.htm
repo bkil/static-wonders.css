@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jxt</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  display: block;
+  font-family: monospace;
+}
+</style>
+</head>
+<body>
+<script>
+'use strict';
+function submit() {
+  var nl = String.fromCharCode(10);
+  var o = '';
+  var s;
+  var a = window.f.t.value.split(nl);
+  var j;
+  var i = -1;
+  while (11 > (i = i + 1)) {
+    s = a[i] || '';
+    s = s + '           ';
+    s = s.substring(0, 11);
+    if (!j && (10 > i) && (j = s.indexOf(' ') + 1)) {
+      s = s.substring(0, j - 1) + 'o' + s.substring(j);
+    }
+    if (i) {
+      o = o + nl;
+    }
+    o = o + s;
+  }
+  window.f.t.value = o;
+}
+</script>
+<form name=f action="javascript:submit()">
+<textarea name=t rows=12 cols=12
+>          0
+          1
+  o       2
+   o      3
+    x     4
+    xo    5
+    x o   6
+    x     7
+          8
+          9
+abcdefghij</textarea>
+<input type=submit>
+</form>
+</body>
+</html>

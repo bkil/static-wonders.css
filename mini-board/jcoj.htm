@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jcoj</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  height: 20px;
+  width: 8px;
+}
+
+th {
+  font-weight: initial;
+}
+
+td {
+  border-width: 1px;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  cursor: crosshair;
+}
+</style>
+</head>
+<body>
+<table id=t>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>0</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>1</th></tr>
+<tr><td></td><td></td><td>o</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>2</th></tr>
+<tr><td></td><td></td><td></td><td>o</td><td></td><td></td><td></td><td></td><td></td><td></td><th>3</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td></td><td></td><td></td><td></td><td></td><th>4</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td>o</td><td></td><td></td><td></td><td></td><th>5</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td></td><td>o</td><td></td><td></td><td></td><th>6</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>x</td><td></td><td></td><td></td><td></td><td></td><th>7</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>8</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th>9</th></tr>
+<tr><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th>i</th><th>j</th><th></th></tr>
+</table>
+<script>
+'use strict';
+function f(x, y) {
+  document.getElementById('t').rows[y].cells[x].innerText = 'x';
+}
+
+function ff(x, y) {
+  return function() {
+    f(x, y);
+  };
+}
+
+function init() {
+  var j;
+  var r = document.getElementById('t').rows;
+  var c;
+  var i = -1;
+  while ((r.length - 1) > (i = i + 1)) {
+    c = r[i].cells;
+    j = -1;
+    while ((c.length - 1) > (j = j + 1)) {
+      c[j].onclick = ff(j, i);
+    }
+  }
+}
+
+init();
+</script>
+</body>
+</html>

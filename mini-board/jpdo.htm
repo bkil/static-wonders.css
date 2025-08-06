@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jpo</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, pre {
+  margin: 0;
+  padding: 0;
+}
+
+pre, div {
+  display: inline-block;
+}
+
+div {
+  cursor: crosshair;
+}
+</style>
+</head>
+<body>
+<div id=d>
+<pre id=t
+>          0
+          1
+  o       2
+   o      3
+    x     4
+    xo    5
+    x o   6
+    x     7
+          8
+          9
+abcdefghij</pre>
+</div>
+<script>
+'use strict';
+function click(e) {
+  var x = ((11 * e.offsetX) / e.target.offsetWidth) | 0;
+  var y = ((11 * e.offsetY) / e.target.offsetHeight) | 0;
+  if ((0 > x) || (0 > y) || (x > 9) || (y > 9)) {
+    return 0;
+  }
+  var nl = String.fromCharCode(10);
+  var o = '';
+  var s;
+  var t = document.getElementById('t');
+  var a = t.innerText.split(nl);
+  var i = -1;
+  while (11 > (i = i + 1)) {
+    s = a[i] || '';
+    s = s + '           ';
+    s = s.substring(0, 11);
+    if (!(i-y)) {
+      s = s.substring(0, x) + 'x' + s.substring(x + 1);
+    }
+    if (i) {
+      o = o + nl;
+    }
+    o = o + s;
+  }
+  t.innerText = o;
+}
+
+document.getElementById('d').onclick = click;
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pi</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, pre {
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body>
+<pre id=t
+>          0
+          1
+  o       2
+   o      3
+    x     4
+    xo    5
+    x o   6
+    x     7
+          8
+          9
+abcdefghij</pre>
+<form>
+<input name=c size=2>
+<input type=submit>
+</form>
+<script>
+'use strict';
+function init() {
+  var t = document.getElementById('t');
+  var i = window.location.href.indexOf('?') + 1;
+  var h = window.location.href.substring(i);
+  if (!i || (h.length-4)) {
+    return 0;
+  }
+  var x = h.charCodeAt(2) - 65;
+  var y = h.charCodeAt(3) - 48;
+  if ((0 > y) || (y > 9) || (0 > x) || ((x > 31) && (x = x - 32) && 0) || (x > 9)) {
+    return 0;
+  }
+  var nl = String.fromCharCode(10);
+  var o = '';
+  var s;
+  var a = t.innerText.split(nl);
+  var i = -1;
+  while (11 > (i = i + 1)) {
+    s = a[i] || '';
+    s = s + '           ';
+    s = s.substring(0, 11);
+    if (!(i-y)) {
+      s = s.substring(0, x) + 'x' + s.substring(x + 1);
+    }
+    if (i) {
+      o = o + nl;
+    }
+    o = o + s;
+  }
+  t.innerText = o;
+}
+
+init();
+</script>
+</body>
+</html>

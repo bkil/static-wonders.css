@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jcos</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  height: 20px;
+  width: 8px;
+}
+
+th {
+  font-weight: initial;
+}
+
+td {
+  border-width: 1px;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  cursor: crosshair;
+}
+</style>
+</head>
+<body>
+<script>
+'use strict';
+function f(xy) {
+  document.getElementById('t').rows[xy%10].cells[(xy/10)|0].innerText = 'x';
+}
+</script>
+<table id=t>
+<tr><td onclick="f(00)"></td><td onclick="f(10)"></td><td onclick="f(20)"></td><td onclick="f(30)"></td><td onclick="f(40)"></td><td onclick="f(50)"></td><td onclick="f(60)"></td><td onclick="f(70)"></td><td onclick="f(80)"></td><td onclick="f(90)"></td><th>0</th></tr>
+<tr><td onclick="f(01)"></td><td onclick="f(11)"></td><td onclick="f(21)"></td><td onclick="f(31)"></td><td onclick="f(41)"></td><td onclick="f(51)"></td><td onclick="f(61)"></td><td onclick="f(71)"></td><td onclick="f(81)"></td><td onclick="f(91)"></td><th>1</th></tr>
+<tr><td onclick="f(02)"></td><td onclick="f(12)"></td><td>o</td><td onclick="f(32)"></td><td onclick="f(42)"></td><td onclick="f(52)"></td><td onclick="f(62)"></td><td onclick="f(72)"></td><td onclick="f(82)"></td><td onclick="f(92)"></td><th>2</th></tr>
+<tr><td onclick="f(03)"></td><td onclick="f(13)"></td><td onclick="f(23)"></td><td>o</td><td onclick="f(43)"></td><td onclick="f(53)"></td><td onclick="f(63)"></td><td onclick="f(73)"></td><td onclick="f(83)"></td><td onclick="f(93)"></td><th>3</th></tr>
+<tr><td onclick="f(04)"></td><td onclick="f(14)"></td><td onclick="f(24)"></td><td onclick="f(34)"></td><td>x</td><td onclick="f(54)"></td><td onclick="f(64)"></td><td onclick="f(74)"></td><td onclick="f(84)"></td><td onclick="f(94)"></td><th>4</th></tr>
+<tr><td onclick="f(05)"></td><td onclick="f(15)"></td><td onclick="f(25)"></td><td onclick="f(35)"></td><td>x</td><td>o</td><td onclick="f(65)"></td><td onclick="f(75)"></td><td onclick="f(85)"></td><td onclick="f(95)"></td><th>5</th></tr>
+<tr><td onclick="f(06)"></td><td onclick="f(16)"></td><td onclick="f(26)"></td><td onclick="f(36)"></td><td>x</td><td onclick="f(56)"></td><td>o</td><td onclick="f(76)"></td><td onclick="f(86)"></td><td onclick="f(96)"></td><th>6</th></tr>
+<tr><td onclick="f(07)"></td><td onclick="f(17)"></td><td onclick="f(27)"></td><td onclick="f(37)"></td><td>x</td><td onclick="f(57)"></td><td onclick="f(67)"></td><td onclick="f(77)"></td><td onclick="f(87)"></td><td onclick="f(97)"></td><th>7</th></tr>
+<tr><td onclick="f(08)"></td><td onclick="f(18)"></td><td onclick="f(28)"></td><td onclick="f(38)"></td><td onclick="f(48)"></td><td onclick="f(58)"></td><td onclick="f(68)"></td><td onclick="f(78)"></td><td onclick="f(88)"></td><td onclick="f(98)"></td><th>8</th></tr>
+<tr><td onclick="f(09)"></td><td onclick="f(19)"></td><td onclick="f(29)"></td><td onclick="f(39)"></td><td onclick="f(49)"></td><td onclick="f(59)"></td><td onclick="f(69)"></td><td onclick="f(79)"></td><td onclick="f(89)"></td><td onclick="f(99)"></td><th>9</th></tr>
+<tr><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th>i</th><th>j</th><th></th></tr>
+</table>
+</body>
+</html>

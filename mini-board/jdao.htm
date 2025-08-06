@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jdao</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: crosshair;
+}
+</style>
+</head>
+<body>
+<div id=t></div>
+<script>
+'use strict';
+var board;
+
+function draw() {
+  var o = '';
+  var c;
+  var j;
+  var i = -1;
+  while (10 > (i = i + 1)) {
+    if (i) {
+      o = o + '<br>';
+    }
+    j = -1;
+    while (10 > (j = j + 1)) {
+      c = board[i][j];
+      if (!(c - 2)) {
+        o = o + 'o ';
+      } else if (!(c - 1)) {
+        o = o + 'u ';
+      } else {
+        o = o + '<a onclick="f(' + i + j + ')"># </a>';
+      }
+    }
+  }
+  t.innerHTML = o;
+}
+
+function f(xy) {
+  board[(xy / 10) | 0][xy % 10] = 1;
+  draw();
+}
+
+function init() {
+  board = [
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,2,0,0,0,0,0,0,0],
+    [0,0,0,2,0,0,0,0,0,0],
+    [0,0,0,0,1,0,0,0,0,0],
+    [0,0,0,0,1,2,0,0,0,0],
+    [0,0,0,0,1,0,2,0,0,0],
+    [0,0,0,0,1,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0]
+  ];
+  draw();
+}
+
+init();
+</script>
+</body>
+</html>

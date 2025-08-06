@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jcas</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+html, body, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  width: 8px;
+  text-align: center;
+}
+
+th {
+  font-weight: initial;
+}
+
+td {
+  border-width: 1px;
+  border-bottom-style: solid;
+  border-right-style: solid;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<script>
+'use strict';
+function f(xy) {
+  document.getElementById('t').rows[xy%10].cells[(xy/10)|0].innerText = 'x';
+}
+</script>
+<table id=t>
+<tr><td><a href="javascript:f(00)">&nbsp;</a></td><td><a href="javascript:f(10)">&nbsp;</a></td><td><a href="javascript:f(20)">&nbsp;</a></td><td><a href="javascript:f(30)">&nbsp;</a></td><td><a href="javascript:f(40)">&nbsp;</a></td><td><a href="javascript:f(50)">&nbsp;</a></td><td><a href="javascript:f(60)">&nbsp;</a></td><td><a href="javascript:f(70)">&nbsp;</a></td><td><a href="javascript:f(80)">&nbsp;</a></td><td><a href="javascript:f(90)">&nbsp;</a></td><th>0</th></tr>
+<tr><td><a href="javascript:f(01)">&nbsp;</a></td><td><a href="javascript:f(11)">&nbsp;</a></td><td><a href="javascript:f(21)">&nbsp;</a></td><td><a href="javascript:f(31)">&nbsp;</a></td><td><a href="javascript:f(41)">&nbsp;</a></td><td><a href="javascript:f(51)">&nbsp;</a></td><td><a href="javascript:f(61)">&nbsp;</a></td><td><a href="javascript:f(71)">&nbsp;</a></td><td><a href="javascript:f(81)">&nbsp;</a></td><td><a href="javascript:f(91)">&nbsp;</a></td><th>1</th></tr>
+<tr><td><a href="javascript:f(02)">&nbsp;</a></td><td><a href="javascript:f(12)">&nbsp;</a></td><td>o</td><td><a href="javascript:f(32)">&nbsp;</a></td><td><a href="javascript:f(42)">&nbsp;</a></td><td><a href="javascript:f(52)">&nbsp;</a></td><td><a href="javascript:f(62)">&nbsp;</a></td><td><a href="javascript:f(72)">&nbsp;</a></td><td><a href="javascript:f(82)">&nbsp;</a></td><td><a href="javascript:f(92)">&nbsp;</a></td><th>2</th></tr>
+<tr><td><a href="javascript:f(03)">&nbsp;</a></td><td><a href="javascript:f(13)">&nbsp;</a></td><td><a href="javascript:f(23)">&nbsp;</a></td><td>o</td><td><a href="javascript:f(43)">&nbsp;</a></td><td><a href="javascript:f(53)">&nbsp;</a></td><td><a href="javascript:f(63)">&nbsp;</a></td><td><a href="javascript:f(73)">&nbsp;</a></td><td><a href="javascript:f(83)">&nbsp;</a></td><td><a href="javascript:f(93)">&nbsp;</a></td><th>3</th></tr>
+<tr><td><a href="javascript:f(04)">&nbsp;</a></td><td><a href="javascript:f(14)">&nbsp;</a></td><td><a href="javascript:f(24)">&nbsp;</a></td><td><a href="javascript:f(34)">&nbsp;</a></td><td>x</td><td><a href="javascript:f(54)">&nbsp;</a></td><td><a href="javascript:f(64)">&nbsp;</a></td><td><a href="javascript:f(74)">&nbsp;</a></td><td><a href="javascript:f(84)">&nbsp;</a></td><td><a href="javascript:f(94)">&nbsp;</a></td><th>4</th></tr>
+<tr><td><a href="javascript:f(05)">&nbsp;</a></td><td><a href="javascript:f(15)">&nbsp;</a></td><td><a href="javascript:f(25)">&nbsp;</a></td><td><a href="javascript:f(35)">&nbsp;</a></td><td>x</td><td>o</td><td><a href="javascript:f(65)">&nbsp;</a></td><td><a href="javascript:f(75)">&nbsp;</a></td><td><a href="javascript:f(85)">&nbsp;</a></td><td><a href="javascript:f(95)">&nbsp;</a></td><th>5</th></tr>
+<tr><td><a href="javascript:f(06)">&nbsp;</a></td><td><a href="javascript:f(16)">&nbsp;</a></td><td><a href="javascript:f(26)">&nbsp;</a></td><td><a href="javascript:f(36)">&nbsp;</a></td><td>x</td><td><a href="javascript:f(56)">&nbsp;</a></td><td>o</td><td><a href="javascript:f(76)">&nbsp;</a></td><td><a href="javascript:f(86)">&nbsp;</a></td><td><a href="javascript:f(96)">&nbsp;</a></td><th>6</th></tr>
+<tr><td><a href="javascript:f(07)">&nbsp;</a></td><td><a href="javascript:f(17)">&nbsp;</a></td><td><a href="javascript:f(27)">&nbsp;</a></td><td><a href="javascript:f(37)">&nbsp;</a></td><td>x</td><td><a href="javascript:f(57)">&nbsp;</a></td><td><a href="javascript:f(67)">&nbsp;</a></td><td><a href="javascript:f(77)">&nbsp;</a></td><td><a href="javascript:f(87)">&nbsp;</a></td><td><a href="javascript:f(97)">&nbsp;</a></td><th>7</th></tr>
+<tr><td><a href="javascript:f(08)">&nbsp;</a></td><td><a href="javascript:f(18)">&nbsp;</a></td><td><a href="javascript:f(28)">&nbsp;</a></td><td><a href="javascript:f(38)">&nbsp;</a></td><td><a href="javascript:f(48)">&nbsp;</a></td><td><a href="javascript:f(58)">&nbsp;</a></td><td><a href="javascript:f(68)">&nbsp;</a></td><td><a href="javascript:f(78)">&nbsp;</a></td><td><a href="javascript:f(88)">&nbsp;</a></td><td><a href="javascript:f(98)">&nbsp;</a></td><th>8</th></tr>
+<tr><td><a href="javascript:f(09)">&nbsp;</a></td><td><a href="javascript:f(19)">&nbsp;</a></td><td><a href="javascript:f(29)">&nbsp;</a></td><td><a href="javascript:f(39)">&nbsp;</a></td><td><a href="javascript:f(49)">&nbsp;</a></td><td><a href="javascript:f(59)">&nbsp;</a></td><td><a href="javascript:f(69)">&nbsp;</a></td><td><a href="javascript:f(79)">&nbsp;</a></td><td><a href="javascript:f(89)">&nbsp;</a></td><td><a href="javascript:f(99)">&nbsp;</a></td><th>9</th></tr>
+<tr><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th>i</th><th>j</th><th></th></tr>
+</table>
+</body>
+</html>
