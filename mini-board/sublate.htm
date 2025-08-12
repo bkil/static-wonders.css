@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>sublate</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<style>
+textarea {
+  display: block;
+  width: 100%;
+}
+
+input, textarea {
+  background-color: white;
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+</style>
+<script>
+'use strict';
+var st = new Object;
+
+// JS1
+function String_substring(th, from, to) {
+  if (th.substring) {
+    return th.substring(from, to);
+  }
+  var c;
+  from = from - 1;
+  var o = '';
+  while ((th.length > (from = from + 1)) && (to > from)) {
+    c = th.charAt(from);
+    o = o + c;
+  }
+  return o;
+}
+
+function time(d, x) {
+  var s = '' + ((d = d + x) % 60);
+  s = ((d = (d / 60) | 0) % 60) + '.' + s;
+  return (((d / 60) | 0) % 24) + '.' + s;
+}
+
+function submit(e) {
+  var d = (new Date / 1000) | 0;
+  window.f.t.value = window.f.t.value + '_startup' + time(st.s, 0) + '-deadline' + time(d, 570) + '-click';
+}
+
+function init() {
+  st.s = (new Date / 1000) | 0;
+  var u = window.location.href;
+  var h = '';
+  var i = u.indexOf('?');
+  if (i > -1) {
+    h = String_substring(u, i + 3, u.length);
+    u = String_substring(u, 0, i);
+    if (window.history && window.history.pushState) {
+      window.history.pushState(null, '', u);
+    }
+  }
+  st.t = h + '_startup' + time(st.s, 0) + '-deadline' + time(st.s, 570) + '-reload';
+}
+
+function setText() {
+  window.f.t.value = st.t;
+}
+
+init();
+</script>
+</head>
+<body>
+<form name=f>
+<textarea name=t rows=8 cols=30></textarea>
+<input value='Submit early' type=submit formaction='javascript:submit()'>
+<input value='Submit late' type=submit>
+You need to press the "late" button if you want to submit after the deadline, otherwise please press the less expensive "early" button.
+</form>
+<script>
+'use strict';
+
+setText();
+</script>
+</body>
+</html>
